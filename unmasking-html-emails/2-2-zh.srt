@@ -1,0 +1,341 @@
+1
+00:00:02,040 --> 00:00:03,520
+Welcome back to level two.
+歡迎回來第二階段 。
+
+2
+00:00:03,520 --> 00:00:06,520
+Now that we've recreated our header using tables for layout,
+現在我們已經用表格創建了版面標頭，
+
+3
+00:00:06,520 --> 00:00:09,350
+we're going to continue building out the content of our email
+我們將繼續建立電子郵件的內容
+
+4
+00:00:09,350 --> 00:00:14,620
+using multiple tables and nested tables to create columns.
+使用 多個表格 和 巢狀表格 來創建 列。
+
+5
+00:00:14,620 --> 00:00:17,800
+It's important to know that each section should use a new table.
+重要的是要 知道， 每個部分 都應使用 新表格。
+
+6
+00:00:17,800 --> 00:00:19,890
+We used one table for our header.
+我們 在標頭中使用了一個表格 。
+
+7
+00:00:19,890 --> 00:00:21,850
+Now we're going to add another table to hold the image of our luchadores,
+現在我們 要添加 另一個表格 來保持我們的 luchadores圖片的設定。
+
+8
+00:00:21,850 --> 00:00:24,240
+Now we're going to add another table to hold the image of our luchadores,
+現在我們 要添加 另一個表格 來保持我們的 luchadores圖片的設定。
+
+9
+00:00:24,240 --> 00:00:27,950
+and then create a third table, with two nested tables inside of it,
+然後創建 第三個表格 ， 裡面 有 兩個巢狀表格 。
+
+10
+00:00:27,950 --> 00:00:30,810
+one each for each content area.
+分別用於 每個內容區塊 。
+
+11
+00:00:35,070 --> 00:00:38,100
+Here, you can see that we have our wrapper table,
+在這裡 ， 你 可以看到，我們 有外圈表格 、
+
+12
+00:00:38,100 --> 00:00:40,700
+our header content table, 
+內容標頭表格，
+
+13
+00:00:40,700 --> 00:00:44,060
+and we're adding a table right below that to contain our image.
+接著我們要在下方加入表格，用來顯示圖片。
+
+14
+00:00:51,194 --> 00:00:53,200
+If we wanted to create space between our image and our header,
+如果要在圖片和標頭間加上間隔
+
+15
+00:00:53,200 --> 00:00:55,570
+ we would normally use margin.
+我們 通常會使用 margin 。
+
+16
+00:00:55,570 --> 00:00:58,480
+However, we get varied results in clients when using margin,
+然而 ， 當我們使用 margin時在不同的客戶端上有不一樣的顯示結果 ，
+
+17
+00:00:58,480 --> 00:01:03,550
+and outlook.com specifically doesn't support it.
+且outlook甚至不支援margin 。
+
+18
+00:01:03,550 --> 00:01:05,730
+Instead of relying on margin to create space
+我們不用margin來建立間隔 。
+
+19
+00:01:05,730 --> 00:01:08,780
+in between the two tables, we're going to use padding.
+我們要在兩個表格中間使用padding。
+
+20
+00:01:08,780 --> 00:01:11,350
+Here, we're going to add padding to the cell that is containing our image.
+現在， 我們要在包含圖片的單元格中加上padding  。
+
+21
+00:01:11,350 --> 00:01:12,410
+Here, we're going to add padding to the cell that is containing our image.
+現在， 我們要在包含圖片的單元格中加上padding  。
+
+22
+00:01:17,060 --> 00:01:19,020
+Next, we want to create a table that's going to have two columns.
+接下來 ， 我們要創建 一個 有兩直列的表格 。
+
+23
+00:01:19,020 --> 00:01:21,410
+Next, we want to create a table that's going to have two columns.
+接下來 ， 我們要創建 一個 有兩直列的表格 。
+
+24
+00:01:21,410 --> 00:01:23,600
+Up until this point, we've used a single cell to contain our content.
+到這裡，我們已經用單一格去包內容
+
+25
+00:01:23,600 --> 00:01:24,990
+Up until this point, we've used a single cell to contain our content.
+到這裡，我們已經用單一格去包內容
+
+26
+00:01:24,990 --> 00:01:27,200
+However, we can use multiple cells
+然而 ，我們可以使用 多個區格 。
+
+27
+00:01:27,200 --> 00:01:30,970
+and rely on the default behavior for them to align side by side.
+並藉由預設格是使他們能夠自動對齊。
+
+28
+00:01:33,510 --> 00:01:36,050
+Knowing that we want each area of content to have its own table,
+因為我們想要每個文字區域都有自己的表格
+
+29
+00:01:36,050 --> 00:01:37,900
+we're now going to put a table inside the first cell of our new table.
+我們將要把表格放進去新表格的第一個單元中
+
+30
+00:01:37,900 --> 00:01:42,010
+we're now going to put a table inside the first cell of our new table.
+我們將要把表格放進去新表格的第一個單元中
+
+31
+00:01:42,010 --> 00:01:44,435
+This new table is where we'll apply our styles.
+這個新表格中將會使用我們設定的格式 。
+
+32
+00:01:48,294 --> 00:01:49,710
+For our second column, we're going to repeat this same process,
+在第二直列中 ， 我們要重複一樣的步驟----
+
+33
+00:01:49,710 --> 00:01:52,790
+adding another table within the second cell, and using that table to style the content in the second column.
+在第二的單元格中加入另一個表格，接著用該表格去設定在第二列中的文字樣式
+
+34
+00:01:52,790 --> 00:01:55,990
+adding another table within the second cell, and using that table to style the content in the second column.
+在第二的單元格中加入另一個表格，接著用該表格去設定在第二列中的文字樣式
+
+35
+00:01:55,990 --> 00:01:57,550
+adding another table within the second cell, and using that table to style the content in the second column.
+在第二的單元格中加入另一個表格，接著用該表格去設定在第二列中的文字樣式
+
+36
+00:02:01,590 --> 00:02:04,250
+To ensure that we have an exact amount of space in between our two columns,
+為了確保在兩直列中有準確的空間
+
+37
+00:02:04,250 --> 00:02:05,660
+we're going to use padding on the two-column cells.
+要在兩直列中間使用padding 。
+
+38
+00:02:05,660 --> 00:02:09,360
+we're going to use padding on the two-column cells.
+要在兩直列中間使用padding 。
+
+39
+00:02:09,360 --> 00:02:12,604
+On the first one, we're going to add padding right of 10 pixels,
+在第一個 ， 我們要在右方加上10px的留白 ，
+
+40
+00:02:12,604 --> 00:02:14,020
+and on the second one, we're going to add padding left of 10 pixels.
+在第二個，我們要在左方加上10px的留白
+
+41
+00:02:14,020 --> 00:02:16,650
+and on the second one, we're going to add padding left of 10 pixels.
+在第二個，我們要在左方加上10px的留白
+
+42
+00:02:16,650 --> 00:02:18,830
+This creates a total of 20 pixels space in between the two columns.
+這樣在兩列中間增加了20px的空白間格
+
+43
+00:02:18,830 --> 00:02:19,955
+This creates a total of 20 pixels space in between the two columns.
+這樣在兩列中間增加了20px的空白間格
+
+44
+00:02:23,680 --> 00:02:26,840
+Styling the content for column one is a review of the things that we have already done.
+再複習一次我們做過的，設定直列一的文字樣式
+
+45
+00:02:26,840 --> 00:02:28,470
+Styling the content for column one is a review of the things that we have already done.
+再複習一次我們做過的，設定直列一的文字樣式
+
+46
+00:02:28,470 --> 00:02:31,030
+The first and last rows each contain a cell with an image for our border.
+第一和最後一行各自包含了我們版面邊框的圖片
+
+47
+00:02:31,030 --> 00:02:32,310
+The first and last rows each contain a cell with an image for our border.
+第一和最後一行各自包含了我們版面邊框的圖片
+
+48
+00:02:35,020 --> 00:02:40,430
+The second row contains our date,
+第二 行包含 我們的日期 ，
+
+49
+00:02:40,430 --> 00:02:42,310
+and the third row contains our month.
+第三行 包含了我們 月份。
+
+50
+00:02:50,470 --> 00:02:53,440
+For the first half of content in column two,
+在第二行的前半文字，
+
+51
+00:02:53,440 --> 00:02:55,670
+we're using the same approach that we just saw.
+我們使用了和剛剛一樣的方式。
+
+52
+00:03:02,230 --> 00:03:03,670
+Moving further into the table, we have a row with a cell that has multiple font styles.
+再來看看另一個表格，我們有個設定多種文字樣式的行區塊
+
+53
+00:03:03,670 --> 00:03:07,660
+Moving further into the table, we have a row with a cell that has multiple font styles.
+再來看看另一個表格，我們有個設定多種文字樣式的行區塊。
+
+54
+00:03:07,660 --> 00:03:09,920
+In order to do this, we need to wrap a span around each area of text that we want to be styled differently.
+為了 做到這一點 ， 在要使用不一樣的樣式時，我們需要 替換 一個 span。
+
+55
+00:03:09,920 --> 00:03:13,724
+In order to do this, we need to wrap a span around each area of text that we want to be styled differently.
+為了 做到這一點 ， 在要使用不一樣的樣式時，我們需要 替換 一個 span。
+
+56
+00:03:13,724 --> 00:03:15,140
+Here, you can see that we're using two spans to apply different font families and different font sizes.
+在這裡 ， 我們分成兩個span去設定兩個不一樣的字體和文字大小
+
+57
+00:03:15,140 --> 00:03:18,370
+Here, you can see that we're using two spans to apply different font families and different font sizes.
+在這裡 ， 我們分成兩個span去設定兩個不一樣的字體和文字大小
+
+
+58
+00:03:18,370 --> 00:03:19,465
+Here, you can see that we're using two spans to apply different font families and different font sizes.
+在這裡 ， 我們分成兩個span去設定兩個不一樣的字體和文字大小
+
+
+59
+00:03:23,190 --> 00:03:25,250
+All of our hard work has paid off.
+你所有的努力得到了回報。
+
+60
+00:03:25,250 --> 00:03:28,700
+Here, you can see that our layout looks great in Outlook
+在這裡 ，不管是在IE或是Word排版引擎的outlook中， 我們的版面都看起來不錯
+61
+00:03:28,700 --> 00:03:31,340
+Here, you can see that our layout looks great in Outlook
+在這裡 ，不管是在IE或是Word排版引擎的outlook中， 我們的版面都看起來不錯
+
+62
+00:03:34,190 --> 00:03:36,900
+Now it's your turn to go back into the challenges
+現在 輪到你 再進去 挑戰。
+
+63
+00:03:36,900 --> 00:03:41,160
+and create multiple columns using tables.
+並使用 表格創建 多個列 。
+
+64
+00:03:41,160 --> 00:03:42,292
+And le-- Ugh.
+笑。
+
+65
+00:03:42,292 --> 00:03:43,530
+Heh.
+嘿嘿 。
+
+66
+00:03:43,530 --> 00:03:46,330
+Oh, I was so close.
+呵呵，我 都快要完成了 。
+
+67
+00:03:46,330 --> 00:03:48,600
+With that "Uh-tribute." now our table is centered.
+與UH-致敬。現在，你的表格。。。。
+
+68
+00:03:48,600 --> 00:03:50,450
+Ah, da--
+啊 ， da-
+
