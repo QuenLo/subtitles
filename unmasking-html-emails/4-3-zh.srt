@@ -1,0 +1,308 @@
+1
+00:00:02,080 --> 00:00:02,734
+Welcome back.
+歡迎回來。
+
+2
+00:00:02,734 --> 00:00:04,400
+In this section, we're going to complete
+在本節中 ， 我們將完成 
+
+3
+00:00:04,400 --> 00:00:07,360
+the content of our email and correct some problems that sneak in along the way.
+電子郵件的內文和修正一些一直以來都被我們忽略的問題
+
+4
+00:00:07,360 --> 00:00:09,922
+the content of our email and correct some problems that sneak in along the way.
+電子郵件的內文和修正一些一直以來都被我們忽略的問題
+
+5
+00:00:09,922 --> 00:00:11,630
+While you were completing the challenges,
+當你完成挑戰，
+
+6
+00:00:11,630 --> 00:00:13,130
+we added some new content.
+我們增加了一些新的內容。
+
+7
+00:00:13,130 --> 00:00:15,810
+We've added a phone number, an unsubscribe link,
+我們添加了一個電話號碼 ， 一個取消訂閱鏈接 ，
+
+8
+00:00:15,810 --> 00:00:17,930
+and some contact information.
+以及一些聯絡資訊。
+
+9
+00:00:17,930 --> 00:00:20,680
+To do this, we created a new table with three rows,
+要做到這一點，我們創造了一個有三行的表格，
+
+10
+00:00:20,680 --> 00:00:25,240
+with one cell each for each bit of content.
+其中每個欄位有各自的內容。
+
+11
+00:00:25,240 --> 00:00:27,910
+In looking at the code that we wrote for the phone number,
+來看看我們用來顯示電話號碼的程式碼，
+
+12
+00:00:27,910 --> 00:00:30,340
+we added this as plain text.
+我們用純文字的格式來增加。
+
+13
+00:00:30,340 --> 00:00:32,710
+However, if we test it in Apple Mail,
+但是，如果我們在Apple Mail中測試，
+
+14
+00:00:32,710 --> 00:00:35,190
+we're surprised to see that it's now a link.
+我們很驚訝地看到會有一個連結。
+
+15
+00:00:35,190 --> 00:00:37,490
+What's happening here is Apple's preprocessor adds HTML to convert that text into a link.
+是這樣的，Apple的預處理器加入HTML讓文字變成連結
+
+16
+00:00:37,490 --> 00:00:41,320
+What's happening here is Apple's preprocessor adds HTML to convert that text into a link.
+是這樣的，Apple的預處理器加入HTML讓文字變成連結
+
+17
+00:00:41,320 --> 00:00:43,399
+Now we have a link in our email, but it
+現在在電子郵件中有連結，但它
+
+18
+00:00:43,399 --> 00:00:44,440
+but it doesn't match our design.
+但他並沒有和我們的設計相匹配。
+
+19
+00:00:47,440 --> 00:00:50,630
+We don't have access to the HTML that created the link,
+我們沒有讀取創建連結的HTML，
+
+20
+00:00:50,630 --> 00:00:54,140
+but Apple Mail does support CSS in the style tag,
+但Apple Mail支持在<style>中的CSS，
+
+21
+00:00:54,140 --> 00:00:58,960
+so we can target all anchor tags and apply a color to them.
+所以我們可以指定所有<a>和應用顏色於程式中。
+
+22
+00:00:58,960 --> 00:01:01,380
+Now that we see this, we're thinking maybe
+現在我們看到，我們可以想像也許...
+
+23
+00:01:01,380 --> 00:01:03,280
+it would be better if this text was white.
+文字是白色的會更好一點。
+
+24
+00:01:06,540 --> 00:01:08,050
+We still don't have access to 
+我們還是沒有讀取
+
+25
+00:01:08,050 --> 00:01:12,060
+HTML that created this link, but we know where it's going to be,
+創造了此連結的HTML，但我們知道他要放在哪
+
+26
+00:01:12,060 --> 00:01:15,000
+so to counter this behavior, 
+所以要對付這種行為 ，
+27
+00:01:15,000 --> 00:01:18,030
+we can wrap the phone number text in a span and then use that class
+我們可以將電話號碼拉進<span>，然後用其類別
+
+28
+00:01:18,030 --> 00:01:20,760
+to give that text a specific style.
+設定特定樣式給內容。
+
+29
+00:01:20,760 --> 00:01:22,440
+Now we can see that our phone number
+現在我們可以看到，我們的電話號碼 
+
+30
+00:01:22,440 --> 00:01:26,360
+link has changed to white, while the unsubscribe link remained purple.
+連結底線已更改為白色， 而取消訂閱連結依然是紫色。
+
+31
+00:01:26,360 --> 00:01:27,070
+link has changed to white, while the unsubscribe link remained purple.
+連結底線已更改為白色， 而取消訂閱連結依然是紫色。
+
+32
+00:01:27,070 --> 00:01:28,480
+This is exactly what we wanted.
+這正是我們想要的。
+
+33
+00:01:31,300 --> 00:01:35,450
+Sometimes you want to set font size smaller than 14 pixels.
+有時你想要設置字體大小比14px更小 。
+
+34
+00:01:35,450 --> 00:01:38,440
+Unfortunately, some clients won't allow this.
+不幸的是， 某些客戶端將不會允許這樣 。
+
+35
+00:01:38,440 --> 00:01:40,970
+To show an example of this, we have set our font size to four pixels.
+顯示了這樣一個例子，我們設置字體大小為4px
+
+36
+00:01:40,970 --> 00:01:42,480
+To show an example of this, we have set our font size to four pixels.
+顯示了這樣一個例子，我們設置字體大小為4px
+
+37
+00:01:42,480 --> 00:01:45,690
+If we were to view this email in Gmail using Chrome,
+如果我們要在Chrome中打開Gmail瀏覽，
+
+38
+00:01:45,690 --> 00:01:48,860
+we would see that it's rendering the text at four pixels.
+我們會看到它在是以4px的樣子呈現。
+
+39
+00:01:48,860 --> 00:01:51,060
+However, if we look at it in Apple Mail,
+但是 ， 如果我們在Apple Mail中讀取
+40
+00:01:51,060 --> 00:01:54,625
+we can see that it's not, and it's adjusted it to 14 pixels.
+我們可以看到它並不是4px，他被調整為14px。
+
+41
+00:02:00,620 --> 00:02:02,340
+There are vendor-specific properties that exist to override these defaults.
+有些內建屬性的存在直接的覆蓋這些預設值。
+
+42
+00:02:02,340 --> 00:02:05,560
+There are vendor-specific properties that exist to override these defaults.
+有些內建屬性的存在直接的覆蓋這些預設值。
+
+43
+00:02:05,560 --> 00:02:09,660
+WebKit and Microsoft allow a text size adjustment to none, 
+不允許WebKit和微軟文字大小的調整 。
+
+44
+00:02:09,660 --> 00:02:11,820
+that would make it so our text will render at the specific pixel value that we set.
+這將使我們的本文將會呈現為我們設定的樣子。
+
+45
+00:02:11,820 --> 00:02:15,332
+that would make it so our text will render at the specific pixel value that we set.
+這將使我們的本文將會呈現為我們設定的樣子。
+
+46
+00:02:15,332 --> 00:02:16,790
+With this property in place, we can
+更改了這樣的屬性後
+
+47
+00:02:16,790 --> 00:02:19,650
+we can see that Apple Mail will now render our footer text at four pixels.
+我們可以看到Apple Mail將會顯示4px的文字大小在頁尾的部分
+
+48
+00:02:19,650 --> 00:02:20,910
+we can see that Apple Mail will now render our footer text at four pixels.
+我們可以看到Apple Mail將會顯示4px的文字大小在頁尾的部分
+
+49
+00:02:25,730 --> 00:02:28,401
+If we look at our email in Gmail using Chrome,
+如果我們使用Chrome來開啟Gmail
+
+50
+00:02:28,401 --> 00:02:30,900
+we can see that there was no link added to the phone number,
+我們可以看到，電話號碼是沒有加連結的
+
+51
+00:02:30,900 --> 00:02:34,020
+and our font sizes are the way that we want them.
+而我們的字體大小是我們想要的樣子。
+
+52
+00:02:34,020 --> 00:02:35,570
+If we then look at it in Apple Mail,
+如果我們再看看它在Apple Mail中的樣子，
+
+53
+00:02:35,570 --> 00:02:38,500
+we see that we do have our link, with our white color
+我們可以看到，這是有連結且是白色的字，
+
+54
+00:02:38,500 --> 00:02:40,160
+and our smaller text size.
+以及較小的字體。
+
+55
+00:02:44,277 --> 00:02:45,860
+Now it's your turn to tackle some edge cases in the challenges.
+現在輪到你在挑戰中解決一些邊緣案件。
+
+56
+00:02:45,860 --> 00:02:48,080
+Now it's your turn to tackle some edge cases in the challenges.
+現在輪到你在挑戰中解決一些邊緣案件。
+
+57
+00:02:49,300 --> 00:02:51,980
+Take that, slide.
+拿去....幻!燈!片!
+
+58
+00:02:51,980 --> 00:02:52,735
+Go to your home.
+去...去...去...你家啦！
+
+59
+00:02:52,735 --> 00:02:53,964
+What is he talking about?
+030 他是在講啥鬼...
+
+60
+00:02:53,964 --> 00:02:54,870
+Where —
+哪裡 -。
+
+61
+00:02:54,870 --> 00:02:56,790
+In this section, we're going to — ooh.
+在本節中 ， 我們將 .. 哦 。
+
+62
+00:02:56,790 --> 00:02:58,340
+Hey.
+嘿 :目
+
