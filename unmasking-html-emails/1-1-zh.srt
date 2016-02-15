@@ -1,0 +1,981 @@
+1
+00:00:00,500 --> 00:00:02,620
+[SINGING] Designing emails can be really tough.
+在設計 郵件 可真 難熬。
+
+2
+00:00:02,620 --> 00:00:05,070
+Client preprocessors can be pretty rough.
+客戶端 預處理器 可以是相當 粗糙。
+
+3
+00:00:05,070 --> 00:00:07,370
+To code email for all their devices,
+編寫 電子郵件 的 所有設備 ，
+
+4
+00:00:07,370 --> 00:00:09,540
+cut the design into many slices.
+切 設計 成很多 片。
+
+5
+00:00:09,540 --> 00:00:11,900
+Mark it up in tables with inline style,	
+與 內嵌樣式 表 標記 起來 ，
+
+6
+00:00:11,900 --> 00:00:14,230
+with media queries into one big file.
+有 媒體查詢 成一個大文件 。
+
+7
+00:00:14,230 --> 00:00:16,580
+To win, you'll train and learn the details ??
+要贏， 你會 訓練和 學習 的細節 - 。
+
+8
+00:00:16,580 --> 00:00:17,830
+Unmasking HTML Emails!
+揭露 HTML 電子郵件！
+
+9
+00:00:24,630 --> 00:00:25,440
+Hello, everyone.
+大家好。
+
+10
+00:00:25,440 --> 00:00:27,500
+Welcome to Unmasking HTML Emails.
+歡迎 揭露 HTML電子郵件 。
+
+11
+00:00:27,500 --> 00:00:29,120
+I'm your instructor, Dan Denney,
+我是 你的老師 ， 丹 丹尼 ，
+
+12
+00:00:29,120 --> 00:00:30,830
+and I'll be in your corner as you
+我 將會幫助你 ，在你 。
+
+13
+00:00:30,830 --> 00:00:36,020
+learn how to write HTML and CSS specifically for email clients.
+學習如何編寫  專門針對 電子郵件客戶端 的HTML和CSS。
+
+14
+00:00:36,020 --> 00:00:38,440
+The best way to learn is by doing, so in this course,
+最好的學習 方法是 動手做， 所以在這個 課程中，
+
+15
+00:00:38,440 --> 00:00:40,720
+we're going to take a pre-designed email,
+我們將 使用 預先設計的 電子郵件 ，
+
+16
+00:00:40,720 --> 00:00:42,950
+set up for a large-screen version and a small-screen version
+建立 大屏幕 版本和一個 小屏幕版本 。
+
+17
+00:00:42,950 --> 00:00:46,250
+ and write the HTML and CSS necessary for that
+ 並寫入 HTML和 必要 的 CSS。
+
+18
+00:00:46,250 --> 00:00:49,869
+to display in email clients.
+用來在 電子郵件客戶端 來顯示 。
+
+19
+00:00:49,869 --> 00:00:51,410
+In this particular level, 
+在這個單元中，
+
+20
+00:00:51,410 --> 00:00:54,330
+we're going to focus on creating the header for the large-screen version of the email.
+我們 要專注於 撰寫郵件在 大屏幕版 的標題。
+
+21
+00:00:54,330 --> 00:00:56,870
+we're going to focus on creating the header for the large-screen version of the email.
+我們 要專注於 撰寫郵件在 大屏幕版 的標題。
+
+22
+00:00:56,870 --> 00:00:59,370
+The skills that you're going to need to complete this course
+完成這堂課程，你會需要的技巧有
+
+23
+00:00:59,370 --> 00:01:03,770
+are a working knowledge of HTML and CSS, CSS media queries,
+HTML和CSS ， CSS media queries 的 知識 ，
+
+24
+00:01:03,770 --> 00:01:06,540
+and we're going to have you use some external resources in order
+並且我們 將使用 一些外部 資源。
+
+25
+00:01:06,540 --> 00:01:11,140
+to complete the code necessary to create this email.
+完成 此電子郵件。
+
+26
+00:01:11,140 --> 00:01:14,850
+At its core, an HTML email is an HTML file.
+其核心 ， HTML電子郵件 是一個html 文件。
+
+27
+00:01:14,850 --> 00:01:16,582
+If any of this code looks unfamiliar,
+儘管 代碼 看起來 不友善 ，
+
+28
+00:01:16,582 --> 00:01:18,290
+we may want to have you first get started
+我們 希望 你先 從 
+
+29
+00:01:18,290 --> 00:01:20,700
+by taking Front-end Foundations to learn
+前端UI 的基礎 開始上手。
+
+30
+00:01:20,700 --> 00:01:23,970
+HTML and CSS, or Journey Into Mobile
+HTML和CSS ， 或  手機 
+
+31
+00:01:23,970 --> 00:01:27,800
+to learn CSS media queries.
+學習 CSS media queries。
+
+32
+00:01:27,800 --> 00:01:30,370
+The code that we write is viewed in email clients.
+我們 寫的代碼  會在 電子郵件客戶端被看見 。
+
+33
+00:01:30,370 --> 00:01:32,190
+These can be web-based clients, in which you
+這些都可以 在 Web的 瀏覽器顯示
+
+34
+00:01:32,190 --> 00:01:35,870
+would visit a URL, like gmail.com, to access your email in Gmail,
+當你瀏覽 一個網址 ， 如 接收Gmail在gmail.com  。
+
+35
+00:01:35,870 --> 00:01:39,150
+ or yahoo.com in order to access your email in Yahoo Mail.
+或者是在yahoo.com中的Yahoo Mail接收信件  。
+
+36
+00:01:39,150 --> 00:01:41,400
+or yahoo.com in order to access your email in Yahoo Mail.
+或者是在yahoo.com中的Yahoo Mail接收信件  。
+
+37
+00:01:41,400 --> 00:01:43,630
+The other type of client are native applications.
+其他 類型的客戶端 是 本地應用程序。
+
+38
+00:01:43,630 --> 00:01:47,020
+One popular version of this for Microsoft operating systems is Microsoft Outlook,
+這方面的 在微軟作業系統裡知名的 就是Microsoft Outlook。
+
+39
+00:01:47,020 --> 00:01:52,030
+and one popular version for iOS clients is the Mailbox application.
+在 iOS 客戶端 則是Mailbox App 。
+
+40
+00:01:52,030 --> 00:01:54,750
+and one popular version for iOS clients is the Mailbox application.
+在 iOS 客戶端 則是Mailbox App 。
+
+41
+00:01:54,750 --> 00:01:59,010
+Each of these would be used to access mail for many accounts.
+這些程式 被許多人拿來接收信件 。
+
+42
+00:01:59,010 --> 00:02:00,600
+In modern front-end development, we're
+在 現代的 前端開發 ，  。
+
+43
+00:02:00,600 --> 00:02:03,110
+used to writing code that is viewed in browsers.
+我們是在 瀏覽器中查看 代碼。
+
+44
+00:02:03,110 --> 00:02:05,240
+Those browsers use rendering engines
+這些瀏覽器 使用 排版引擎 。
+
+45
+00:02:05,240 --> 00:02:09,990
+in order to interpret the HTML and CSS that we write.
+來 編譯 我們 寫 HTML和CSS 。
+
+46
+00:02:09,990 --> 00:02:12,130
+Email clients have this same process,
+電子郵件客戶端 有這個 同樣的過程 ，
+
+47
+00:02:12,130 --> 00:02:15,180
+but they have an additional step too.
+但 它們 也有一個額外的 步驟 。
+
+48
+00:02:15,180 --> 00:02:18,465
+They use a preprocessor that will actually change your HTML.
+他們使用一個 預處理器 ，這實質上會改變 你的HTML 。
+
+49
+00:02:21,650 --> 00:02:23,500
+Let's take a look at 
+讓我們來 看看  。
+
+50
+00:02:23,500 --> 00:02:25,360
+how preprocessors affect the code that we write.
+預處理器 是如何影響 我們 編寫的代碼 。
+
+51
+00:02:25,360 --> 00:02:28,780
+Their original intention was to protect the operating system
+他們的 初衷是為了 保護作業系統 。
+
+52
+00:02:28,780 --> 00:02:31,560
+from code that could be executed in an application
+因為 代碼 可能 在一個應用程序 中執行。
+
+53
+00:02:31,560 --> 00:02:34,980
+and have harmful effects on the operating system itself.
+並且 可能對 作業系統本身 造成有害影響。
+
+54
+00:02:34,980 --> 00:02:37,460
+Since then, they've added additional responsibilities
+從那時起 ， 他們 增加了額外的 責任 。
+
+55
+00:02:37,460 --> 00:02:40,480
+in that they remove or change our HTML
+所以它們刪除或更改你的HTML 。
+
+56
+00:02:40,480 --> 00:02:45,210
+and CSS, override our styles with their own CSS,
+和css ， 用自己本身的CSS覆蓋 我們的 styles  ，
+
+57
+00:02:45,210 --> 00:02:46,970
+change the entire document structure for web-based clients, 
+改變整個 在web客戶端的文檔結構。
+
+58
+00:02:46,970 --> 00:02:51,131
+and remove any and all JavaScript.
+並刪除 任何或所有 的JavaScript。
+
+59
+00:02:51,131 --> 00:02:53,130
+So you're not going to be writing any JavaScript
+所以你 無法 寫入 任何JavaScript 。
+
+60
+00:02:53,130 --> 00:02:57,300
+for an HTML email anytime soon.
+在一份 HTML 電子郵件 。
+
+61
+00:02:57,300 --> 00:02:59,900
+Gmail has the most aggressive preprocessor of all.
+Gmail 是 最激進 的 預處理 。
+
+62
+00:02:59,900 --> 00:03:01,650
+This is unfortunate, because it's
+這是不幸的 ， 
+
+63
+00:03:01,650 --> 00:03:04,610
+ because it's one of the most popular email clients out there.
+因為它是最 流行的 電子郵件客戶端  。
+
+64
+00:03:04,610 --> 00:03:06,260
+The combination of its popularity
+因為他的知名度 和
+
+65
+00:03:06,260 --> 00:03:09,230
+and its preprocessing affect how we
+它的 預處理 影響了我們
+
+66
+00:03:09,230 --> 00:03:11,670
+have to write our HTML and CSS.
+寫出來的HTML和CSS 。
+
+67
+00:03:11,670 --> 00:03:13,100
+Let's take a look at specifically
+讓我們 來看看 具體上
+
+68
+00:03:13,100 --> 00:03:15,190
+what Gmail's preprocessor does.
+Gmail的 預處理器 做了啥事。
+
+69
+00:03:15,190 --> 00:03:17,290
+First off, it removes any link tags.
+首先 ，它會刪除 任何 link 標籤。
+
+70
+00:03:17,290 --> 00:03:20,100
+This means that any external style sheets in which we
+這意味著任一個外部的 style 。
+
+71
+00:03:20,100 --> 00:03:22,240
+have code would be removed.
+都會被刪除。
+
+72
+00:03:22,240 --> 00:03:27,010
+It also overrides our styles with its own version of CSS,
+它也改寫我們 的styles 成為它的CSS 版本 ，
+
+73
+00:03:27,010 --> 00:03:29,980
+and then it changes the entire document structure.
+然後 它改變了 整個 文檔結構。
+
+74
+00:03:29,980 --> 00:03:33,250
+Finally ...and this is the most harmful to our code ....
+最後 - 這是對我們程式最糟糕的一項----
+
+75
+00:03:33,250 --> 00:03:34,770
+it removes style tags.
+它會刪除 style 標籤 。
+
+76
+00:03:34,770 --> 00:03:38,190
+This means that we can't write CSS in an external style sheet.
+這意味著我們 不能 在外部 style 上寫 CSS。
+
+77
+00:03:38,190 --> 00:03:42,100
+We also can't lump together CSS properties in a style tag
+我們也無法使用 CSS 屬性 的 style 標籤。
+
+78
+00:03:42,100 --> 00:03:43,610
+to apply to our HTML elements.
+在HTML元素上。
+
+79
+00:03:46,410 --> 00:03:48,580
+So now let's go back to our base HTML
+所以現在 ，讓我們 回到我們的 基本HTML 。
+
+80
+00:03:48,580 --> 00:03:50,890
+and start adding some content.
+並開始增加 一些內容 。
+
+81
+00:03:50,890 --> 00:03:55,520
+First off, we're going to add the image for the stars.
+首先 ， 我們要 加入星星的圖片 。
+
+82
+00:03:55,520 --> 00:03:57,160
+One thing to note is that we're using
+有一點要注意 的是，我們 使用的是 。
+
+83
+00:03:57,160 --> 00:03:59,670
+an absolute URL for the image.
+一個絕對路徑的圖片 。
+
+84
+00:03:59,670 --> 00:04:02,980
+Any time that we're adding an image to an HTML email,
+任何時候，我們 要添加 HTML電子郵件 的圖片 ，
+
+85
+00:04:02,980 --> 00:04:05,580
+we need to use an absolute URL.
+都需要 使用絕對路徑 。
+
+86
+00:04:05,580 --> 00:04:08,930
+This image needs to be stored on a server and accessible,
+這個 圖像需要被存儲在可被讀取的服務器上 ，
+
+87
+00:04:08,930 --> 00:04:11,710
+and we will reference it using an absolute path.
+我們將 使用絕對路徑 來引用它 。
+
+88
+00:04:11,710 --> 00:04:15,210
+This is one big difference between email HTML and website
+這是 HTML 的電子郵件 和網站 之間的一個 很大的區別。
+
+89
+00:04:15,210 --> 00:04:15,974
+HTML.
+HTML。
+
+90
+00:04:15,974 --> 00:04:17,390
+All of the images that we're going to use in our example email will have an absolute URL.
+所有我們將在郵件中使用的圖片，都需要有絕對路徑
+
+91
+00:04:17,390 --> 00:04:21,070
+All of the images that we're going to use in our example email will have an absolute URL.
+所有我們將在郵件中使用的圖片，都需要有絕對路徑
+
+92
+00:04:21,070 --> 00:04:22,730
+This is a lot of code to look at,
+這是很多程式碼 ，
+
+93
+00:04:22,730 --> 00:04:25,730
+so we're going to abbreviate these URLs using a dot, dot,
+所以我們用....來省略這些URL，
+
+94
+00:04:25,730 --> 00:04:29,290
+dot, like this.
+像這樣。
+
+95
+00:04:29,290 --> 00:04:31,430
+Continuing on with our initial markup,
+繼續說我們一開始的重點 ，
+
+96
+00:04:31,430 --> 00:04:34,860
+we're going to add an H1 and a paragraph tag to our email.
+我們要添加 H1 和 DIV 到 電子郵件。
+
+97
+00:04:37,472 --> 00:04:38,930
+Throughout this course, we're going
+在整個 過程中， 。
+
+98
+00:04:38,930 --> 00:04:41,000
+to be writing a lot of code, and it's all
+我們將寫大量的 程式碼， 
+
+99
+00:04:41,000 --> 00:04:43,360
+and it's all going to be in one single file.
+在單一個文件中 。
+
+100
+00:04:43,360 --> 00:04:45,100
+In order to keep focus on the part
+為了 能夠專注於 
+
+101
+00:04:45,100 --> 00:04:46,600
+that we're working on at the moment,
+我們 正在撰寫 的部分 ，
+
+102
+00:04:46,600 --> 00:04:48,940
+we're going to collapse the code surrounding the areas
+我們要 摺疊 部分 我們正在處理的 程式碼。
+
+103
+00:04:48,940 --> 00:04:50,350
+that we're working on.
+我們要 摺疊 部分 我們正在處理的 程式碼。
+
+104
+00:04:50,350 --> 00:04:52,910
+You can see here that we've collapsed the opening HTML 
+你 可以在這裡看到 ，我們已經 展開 。HTML
+
+105
+00:04:52,910 --> 00:04:59,140
+and the closing HTML so that we can focus on the body.
+和 摺疊起來 的HTML ，這樣我們 可以專注於 body 。
+
+106
+00:04:59,140 --> 00:05:01,880
+If we take our code and view it in Chrome,
+如果我們把程式碼放到 Chrome 上瀏覽
+
+107
+00:05:01,880 --> 00:05:03,590
+we get expected results.
+我們得到了 預期的效果 。
+
+108
+00:05:03,590 --> 00:05:06,030
+This is unstyled HTML, so we're going
+這是 unstyled 的 HTML。
+
+109
+00:05:06,030 --> 00:05:08,940
+to default to Times New Roman for the font family,
+預設的字體是 Times New Roman ，
+
+110
+00:05:08,940 --> 00:05:12,680
+and then we'll have some browser-specific spacing added.
+然後 ，我們 將有一些 特定瀏覽器的 間距 增加 。
+
+111
+00:05:12,680 --> 00:05:15,110
+However, if we view this in Gmail,
+但是，如果 在Gmail中，
+
+112
+00:05:15,110 --> 00:05:17,280
+we see some slight differences.
+我們會看到一些細微的差別 。
+
+113
+00:05:17,280 --> 00:05:19,160
+Gmail is applying a different font
+Gmail 採用 不同的字體 。
+
+114
+00:05:19,160 --> 00:05:22,010
+family and different spacing.
+和 不同的間距 。
+
+115
+00:05:22,010 --> 00:05:24,670
+This is because Gmail's preprocessor has actually
+這是因為 Gmail的 預編譯器  。
+
+116
+00:05:24,670 --> 00:05:26,900
+changed the code that we've written.
+改變了 我們 編寫的代碼 。
+
+117
+00:05:30,090 --> 00:05:31,960
+Let's use the browser developer tools
+讓我們使用 瀏覽器的 開發工具 。
+
+118
+00:05:31,960 --> 00:05:35,080
+to compare how our code is different from the Chrome
+比較你的程式碼在。
+
+119
+00:05:35,080 --> 00:05:39,230
+version and the Gmail version.
+Chrome 和 Gmail上。
+
+120
+00:05:39,230 --> 00:05:41,260
+First off, looking at the Chrome version,首先，來看Chrome 的版本 ，
+
+121
+00:05:41,260 --> 00:05:43,870
+we can see that our code is as expected.
+我們可以看到， 程式碼是 按預期的顯示 。
+
+122
+00:05:43,870 --> 00:05:45,860
+The only difference is that chrome is adding
+唯一的 區別是。
+
+123
+00:05:45,860 --> 00:05:47,295
+some of its own default styles.
+chrome 增加一些它 自己的 設定樣式 。
+
+124
+00:05:50,950 --> 00:05:53,970
+Continuing on into Gmail, we see that our code
+回到Gmail ， 我們看到程式碼 。
+
+125
+00:05:53,970 --> 00:05:57,260
+is in a very different place than it was before.
+和原本的樣子有很大的不同 。
+
+126
+00:05:57,260 --> 00:06:00,430
+If you look way down the line of divs,
+如果你往下看到 divs  ，
+
+127
+00:06:00,430 --> 00:06:04,160
+we'll find our code towards the bottom.
+我們 會發現 程式碼在底部附近。
+
+128
+00:06:04,160 --> 00:06:06,440
+So what is actually going on with our code here?
+我們的程式碼在這裡發生了什麼事？
+
+129
+00:06:06,440 --> 00:06:08,990
+If we look at that code that was towards the bottom,
+如果我們看一下 底部附近的程式碼，
+
+130
+00:06:08,990 --> 00:06:12,120
+we can see that it resembles the code that we wrote.
+我們 可以看到它 類似於 我們 寫的程式碼 。
+
+131
+00:06:12,120 --> 00:06:14,760
+Our inline styles are there, but they're now applied
+我們的inline styles是有的，但他們被套用在
+
+132
+00:06:14,760 --> 00:06:17,340
+to a div tag instead of a body.
+一個 div標籤 ，而不是 body 。
+
+133
+00:06:17,340 --> 00:06:18,870
+Our image is there, but it's being
+我們的圖片是存在的 ， 
+
+134
+00:06:18,870 --> 00:06:21,640
+served from a different location because Gmail wants
+但它被移至不同的位置，因為 Gmail的 希望 
+
+135
+00:06:21,640 --> 00:06:23,690
+to use its own caching service.
+使用它自己的 緩存(cache)的服務 。
+
+136
+00:06:23,690 --> 00:06:26,330
+Our H1 and paragraph tags are left alone,
+我們的 H1 和段落 標記 不見了 ，
+
+137
+00:06:26,330 --> 00:06:32,540
+but Gmail's applying CSS to them via its own style sheet.
+而 Gmail的 套用了自己的 CSS。
+
+138
+00:06:32,540 --> 00:06:35,690
+In fact, if we look at the body tag of the Gmail web
+事實上 ， 如果我們 看一下 Gmail  的 body標籤 
+
+139
+00:06:35,690 --> 00:06:38,370
+application, we see a lot of code
+我們看到 了大量的程式碼 
+
+140
+00:06:38,370 --> 00:06:42,920
+that is no way related to ours.
+是和我們沒有相關聯的。
+
+141
+00:06:42,920 --> 00:06:45,310
+Knowing what preprocessors are capable of,
+了解了 預處理器 的作用後，
+
+142
+00:06:45,310 --> 00:06:48,380
+we need to write our styles in a way that they won't be removed,
+我們需要用不會被移除的方式來寫我們的styles。
+
+143
+00:06:48,380 --> 00:06:50,840
+and that they can counter any styles created
+而且它們 要能 對抗 任何 
+
+144
+00:06:50,840 --> 00:06:53,230
+by the preprocessors themselves.
+由 預處理程序 產生的 styles 。
+
+145
+00:06:53,230 --> 00:06:56,280
+In order to do this, we're going to write our styles inline
+為了 做到這一點 ， 我們將styles寫成inline styles 
+
+146
+00:06:56,280 --> 00:06:57,200
+to create our email.
+來建立電子郵件。
+
+147
+00:07:00,260 --> 00:07:02,190
+To write inline styles, the first thing
+寫 inline styles 的第一件事。
+
+148
+00:07:02,190 --> 00:07:04,680
+that we're going to do is add a style attribute
+我們 要做的 就是添加一個 style 屬性 
+
+149
+00:07:04,680 --> 00:07:06,090
+to our image tag.
+給 image 標籤 。
+
+150
+00:07:06,090 --> 00:07:10,060
+We'll then add CSS properties to give it the look that we want,
+我們 加入 CSS屬性 使它成為我們想要的樣子 ，
+
+151
+00:07:10,060 --> 00:07:12,660
+and finally add a width attribute
+最後加入 width屬性 ，
+
+152
+00:07:12,660 --> 00:07:14,900
+to set it to 600 pixels.
+將其設置為 600像素 。
+
+153
+00:07:14,900 --> 00:07:19,860
+Here, you can see that our star graphic is taking shape.
+在這裡 ， 你 可以看到， 我們的星星 圖形 正在形成 。
+
+154
+00:07:19,860 --> 00:07:22,890
+Next, we'll follow that same process for our H1 tag.
+接下來 ， 我們將用一樣的方式來處理H1標籤。
+
+155
+00:07:22,890 --> 00:07:25,860
+We'll add our style attribute and add properties to it,
+我們將加入我們的style屬性，並給它設定屬性，
+
+156
+00:07:25,860 --> 00:07:27,820
+but the one interesting thing to note
+但 有一個 有趣的事情 要注意。
+
+157
+00:07:27,820 --> 00:07:31,390
+is that, because we can't reference an area of CSS,
+是這樣的....因為我們 不能引用 區域 的 CSS，
+
+158
+00:07:31,390 --> 00:07:35,020
+we have to include any reset styles on every element that we want to reset.
+我們 必須包覆任何一項我們想要重置的元素上所有的styles。 
+
+159
+00:07:35,020 --> 00:07:36,540
+we have to include any reset styles on every element that we want to reset.
+我們 必須包覆任何一項我們想要重置的元素上所有的styles。
+
+
+160
+00:07:36,540 --> 00:07:38,490
+We're going to put margin: 0 on this
+我們 打算設定 margin:0。
+
+161
+00:07:38,490 --> 00:07:41,120
+to counter any browser behavior that would
+對抗 任何瀏覽器 
+
+162
+00:07:41,120 --> 00:07:45,210
+add spacing to our H1 tag.
+增加間距到您的H1標籤。
+
+163
+00:07:45,210 --> 00:07:47,190
+Our paragraph tag is a combination
+我們的 段落標記 是 一個 由
+
+164
+00:07:47,190 --> 00:07:49,610
+of both of our prior tags in that first we
+我們事先 標記中
+
+165
+00:07:49,610 --> 00:07:56,840
+need to apply container styles, then font styles, and also
+所需要套用的樣式，字體樣式和
+
+166
+00:07:56,840 --> 00:07:57,810
+our reset styles.
+我們重置的styles 所組成。
+
+167
+00:08:02,560 --> 00:08:07,060
+If we view the results of our inline CSS, we find a problem.
+如果看 我們的 inline CSS 會發現一個問題 。
+
+168
+00:08:07,060 --> 00:08:09,760
+We want all three of these elements to be aligned
+我們希望 這三個 元件對齊 。
+
+169
+00:08:09,760 --> 00:08:10,885
+and to have equal widths.
+並具有 相等的寬度 。
+
+170
+00:08:13,440 --> 00:08:16,360
+We can fix this by adding a div around all
+我們 加入一個div 解決這個問題 。
+
+171
+00:08:16,360 --> 00:08:21,180
+of our current content, applying margin: 0 auto to center it,
+在目前的區塊中，套用margin: 0，自動居中，
+
+172
+00:08:21,180 --> 00:08:23,810
+and applying a max width of 600 pixels
+並套用 最大寬度為 600 像素 。
+
+173
+00:08:23,810 --> 00:08:25,880
+so that it never gets bigger than that.
+因此 ，它 永遠不會 大於 600px  。
+
+174
+00:08:25,880 --> 00:08:28,540
+As you can see now, the content is contained
+所以 你現在可以看到， 
+
+175
+00:08:28,540 --> 00:08:32,190
+and the container is centered.
+內容都置中 。
+
+176
+00:08:32,190 --> 00:08:33,990
+To clean this up a little more, we
+在更深入了解一下， 我們 。
+
+177
+00:08:33,990 --> 00:08:37,090
+can apply text-align: center to our div
+可以將文字 對齊居中 DIV。
+
+178
+00:08:37,090 --> 00:08:38,940
+and allow that to cascade down to all
+並 套用 到 所有 。
+
+179
+00:08:38,940 --> 00:08:40,350
+of the text inside of it.
+它裡面 的文字。
+
+180
+00:08:42,970 --> 00:08:46,010
+To complete our header, we need to add a background.
+完成 我們的 header ， 我們 需要添加一個 background
+
+181
+00:08:46,010 --> 00:08:47,930
+We want this background to run the full width
+我們希望 這個background 
+
+182
+00:08:47,930 --> 00:08:49,380
+of the available space.
+可以占滿所有的橫向可用空間。
+
+183
+00:08:49,380 --> 00:08:51,110
+In order to do that, we're going to wrap
+為了 做到這一點，  
+
+184
+00:08:51,110 --> 00:08:54,290
+a div around our current content container,
+我們要將 DIV 包住 我們 內容區塊，
+
+185
+00:08:54,290 --> 00:08:57,320
+and apply a background color and background image to that div.
+並套用 背景顏色和 背景圖像 到div中。
+
+186
+00:08:59,990 --> 00:09:03,210
+So far, we've seen what happens if we take our code and view it
+到目前為止 ， 我們已經看到我們的程式碼，
+
+187
+00:09:03,210 --> 00:09:05,890
+after it has been through Gmail's preprocessor
+在經過 Gmail 的 預處理後
+
+188
+00:09:05,890 --> 00:09:08,450
+and Chrome's rendering engine.
+以及 Chrome 的 排版引擎處理 過後 會長什麼樣子  。
+
+189
+00:09:08,450 --> 00:09:11,420
+Here is an example of viewing our email after it's
+這例子 是查看你的電子郵件 當其
+
+190
+00:09:11,420 --> 00:09:14,670
+been processed by Gmail preprocessor and Firefox's rendering engine.
+在通過 Gmail的 預處理 和Firefox 排版引擎 處理。
+
+191
+00:09:14,670 --> 00:09:15,740
+been processed by Gmail preprocessor and Firefox's rendering engine.
+在通過 Gmail的 預處理 和Firefox 排版引擎 處理。
+
+
+192
+00:09:15,740 --> 00:09:20,070
+As we can see, everything looks great.
+我們可以看到 ，一切都 看起來不錯。
+
+193
+00:09:20,070 --> 00:09:22,220 
+Now it's your turn to start building an HTML email in the challenges.
+現在 輪到你 在【挑戰】中建立 一個HTML Email
+
+194
+00:09:22,220 --> 00:09:25,640
+Now it's your turn to start building an HTML email in the challenges.
+現在 輪到你 在【挑戰】中建立 一個HTML Email
+
+195
+00:09:25,640 --> 00:09:28,200
+Blap beep.
+嗶嗶。LOL
+
+196
+00:09:28,200 --> 00:09:29,750
+Ugh.
+啊。LOL
+
