@@ -1,0 +1,722 @@
+1
+00:00:00,208 --> 00:00:02,166
+[SINGING] Designing emails can be really tough.
+在設計 郵件 可真 難熬。
+
+2
+00:00:02,166 --> 00:00:05,080
+Client preprocessors can be pretty rough.
+客戶端 預處理器 可以是相當 粗糙。
+
+3
+00:00:05,080 --> 00:00:07,386
+To code email for all their devices,
+編寫 電子郵件 的 所有設備 ，
+
+4
+00:00:07,386 --> 00:00:09,535
+cut the design into many slices.
+切 設計 成很多 片。
+
+5
+00:00:09,535 --> 00:00:11,910
+Mark it up in tables with inline style,
+與 內嵌樣式 表 標記 起來 ，
+
+6
+00:00:11,910 --> 00:00:14,220
+with media queries into one big file.
+有 媒體查詢 成一個大文件 。
+
+7
+00:00:14,220 --> 00:00:16,200
+To win, you'll train and learn the details —
+要贏， 你會 訓練和 學習 的細節 - 。
+
+8
+00:00:16,200 --> 00:00:18,317
+Unmasking HTML Emails!
+揭露 HTML 電子郵件！
+
+9
+00:00:24,170 --> 00:00:25,090
+Welcome back.
+歡迎回來。
+
+10
+00:00:25,090 --> 00:00:27,820
+In level one, you learned how to defeat one opponent by countering the preprocessing skills of Gmail.
+在level 1，你學會了如何使用對抗Gmail預處理器的技巧。
+
+11
+00:00:27,820 --> 00:00:30,491
+In level one, you learned how to defeat one opponent by countering the preprocessing skills of Gmail.
+在level 1，你學會了如何使用對抗Gmail預處理器的技巧。
+
+12
+00:00:30,491 --> 00:00:31,990
+In this level, you're going to learn
+在本 level， 你將了解
+
+13
+00:00:31,990 --> 00:00:35,150
+about multiple opponents, and their secret weapon, 
+更多個對手 ，以及他們的秘密武器....
+
+14
+00:00:35,150 --> 00:00:36,360
+the Word rendering engine.
+....."Word 的 排版引擎" 。
+
+15
+00:00:36,360 --> 00:00:38,000
+In order to defeat them, 
+為了 擊敗他們 ，
+
+16
+00:00:38,000 --> 00:00:42,790
+we're going to be recreating our header using tables for layout.
+我們將要重新設定 我們的 header 。
+
+17
+00:00:42,790 --> 00:00:47,800
+In this section, we're going to focus on Outlook 2003 and 2013.
+在 本節中 ， 我們將 專注於 Outlook 2003和 2013 。
+
+18
+00:00:47,800 --> 00:00:49,950
+The reason that we're focusing on both of these
+我們 專注於 這兩個的原因是
+
+19
+00:00:49,950 --> 00:00:52,750
+is that they use different rendering engines.
+他們使用 不同的排版 引擎。
+
+20
+00:00:52,750 --> 00:00:57,740
+Prior to 2007, Word used Internet Explorer 6 for its rendering engine.
+2007年之前 ， Word 用 的Internet Explorer 6 當它的 排版引擎 。
+
+21
+00:00:57,740 --> 00:00:59,450
+Prior to 2007, Word used Internet Explorer 6 for its rendering engine.
+2007年之前 ， Word 用 的Internet Explorer 6 當它的 排版引擎 。
+
+22
+00:00:59,450 --> 00:01:03,580
+2007 and later uses Microsoft Word.
+2007年 以後是使用Microsoft Word 。
+
+23
+00:01:03,580 --> 00:01:05,990
+You can see here that we get unexpected results
+你可以看到 我們得到了意想不到的效果 。
+
+24
+00:01:05,990 --> 00:01:10,820
+when word processing software is rendering our HTML and CSS.
+當使用WORD來處理HTML和CSS時 。
+
+25
+00:01:10,820 --> 00:01:13,910
+Our stars' width is correct, 
+我們的 星星圖案 寬度 是正確的，
+
+26
+00:01:13,910 --> 00:01:15,500
+the styles are missing from the background of it,
+背景消失，
+
+27
+00:01:15,500 --> 00:01:18,540
+and our padding is missing from our paragraph tag.
+我們的留白間格 也從段落標記後方 消失
+
+28
+00:01:21,510 --> 00:01:24,690
+The reason all this happens is that Word lacks box model and positioning support.
+這一切 發生的是因 Word 沒有 box model 與 定位支援
+
+29
+00:01:24,690 --> 00:01:26,092
+The reason all this happens is that Word lacks box model and positioning support.
+這一切 發生的是因 Word 沒有 box model 與 定位支援
+
+
+30
+00:01:26,092 --> 00:01:27,800
+Everything that you can think of that 
+你能想到的是
+
+31
+00:01:27,800 --> 00:01:30,820
+you would want to use to create a layout in CSS
+你所創建要來使用的CSS
+
+32
+00:01:30,820 --> 00:01:32,460
+is not supported by it.
+將不被他所支援。
+
+33
+00:01:32,460 --> 00:01:36,380
+So we can't set specific heights, display options,floats, or positions.
+所以我們無法設定指定的高度、顯示選項 ，浮動 ， 或 位置 。
+
+34
+00:01:36,380 --> 00:01:38,410
+So we can't set specific heights, display options,floats, or positions.
+所以我們無法設定指定的高度、顯示選項 ，浮動 ， 或 位置 。
+
+
+35
+00:01:38,410 --> 00:01:41,610
+We do get minimal support for width and padding.
+我們在寬度 和 間格 上有得到些許的支援 
+
+36
+00:01:41,610 --> 00:01:44,490
+However, they're not supported on div element or paragraph
+然而，他們不支援<div>或<p>的標籤。
+
+37
+00:01:44,490 --> 00:01:45,460
+
+
+38
+00:01:45,460 --> 00:01:50,300
+They are, however, supported on table elements.
+但他們支援 table 的元素。
+
+39
+00:01:50,300 --> 00:01:52,830
+You should absolutely avoid using tables for layout when building web pages.
+你必須 避免使用 table 佈局 當 構建Web 頁面 。
+
+40
+00:01:52,830 --> 00:01:54,400
+You should absolutely avoid using tables for layout when building web pages.
+你必須 避免使用 table 佈局 當 構建Web 頁面 。
+
+
+41
+00:01:54,400 --> 00:01:57,680
+However, they're a necessity for HTML emails because of the lack of CSS support.
+然而，他們在HTML電子郵件中是必要的，因為他缺乏對CSS的支援。
+
+42
+00:01:57,680 --> 00:01:59,270
+However, they're a necessity for HTML emails because of the lack of CSS support.
+然而，他們在HTML電子郵件中是必要的，因為他缺乏對CSS的支援。
+
+43
+00:02:02,510 --> 00:02:04,950
+Tables typically use many semantic elements to create their structure.
+table 通常 使用許多 元素 來建立他們的結構。
+
+44
+00:02:04,950 --> 00:02:07,890
+Tables typically use many semantic elements to create their structure.
+table 通常 使用許多 元素 來建立他們的結構。
+
+45
+00:02:07,890 --> 00:02:09,740
+However, this is too much code for what we need for our layouts.
+然而，這樣在佈局上會有過多的程式碼。
+
+46
+00:02:09,740 --> 00:02:11,530
+However, this is too much code for what we need for our layouts.
+然而，這樣在佈局上會有過多的程式碼。
+
+47
+00:02:11,530 --> 00:02:13,000
+We're going to use simplified tables, 
+我們將 使用簡化 的 table ，
+
+48
+00:02:13,000 --> 00:02:17,520
+in that we're only going to use the table element, table row element, and table cell element.
+因為我們只要使用到table元素 ， tr 和 td。
+
+49
+00:02:17,520 --> 00:02:18,260
+in that we're only going to use the table element, table row element, and table cell element.
+因為我們只要使用到table元素 ， tr 和 td。
+
+50
+00:02:22,710 --> 00:02:26,250
+Many clients apply default spacing in order to space out tables.
+許多客戶端 會使用預設間距讓table保持固定距離。
+
+51
+00:02:26,250 --> 00:02:27,310
+Many clients apply default spacing in order to space out tables.
+許多客戶端 會使用預設間距讓table保持固定距離。
+
+52
+00:02:27,310 --> 00:02:29,020
+We're going to need to counter this.
+我們將 需要 針對 這一點。
+
+53
+00:02:29,020 --> 00:02:33,430
+In order to do that, we're going to use HTML attributes, border,
+為了 做到這一點， 我們將 使用 HTML屬性的 border、
+
+54
+00:02:33,430 --> 00:02:37,120
+cell padding, and cell spacing, and set them to zero.
+cell padding 和 cell spacing，並將它們設為 0。
+
+55
+00:02:37,120 --> 00:02:40,470
+With those set, you can see that we no longer have any space
+使用這樣設定 ， 你可以看到，我們不再有任何間隙
+
+56
+00:02:40,470 --> 00:02:44,210
+in between our table cells.
+在我們的 表格 td 之間 。
+
+57
+00:02:44,210 --> 00:02:46,000
+Here's an example of our simplified table with our reset attributes
+這裡 是一個我們重設後 簡單 的table 例子。
+
+58
+00:02:46,000--> 00:02:48,870
+, and this table is what we're going to use to contain all of the content in our email.
+我們將要把電子郵件中的所有內容包含在這個table中
+
+59
+00:02:48,870 --> 00:02:50,710
+, and this table is what we're going to use to contain all of the content in our email.
+我們將要把電子郵件中的所有內容包含在這個table中
+
+60
+00:02:50,710 --> 00:02:52,450
+, and this table is what we're going to use to contain all of the content in our email.
+我們將要把電子郵件中的所有內容包含在這個table中
+
+61
+00:02:52,450 --> 00:02:54,260
+Because every table that we write has to have these reset attributes,
+因為每次 我們 編寫 table 都必須重置這些屬性
+
+62
+00:02:54,260 --> 00:02:56,380
+Because every table that we write has to have these reset attributes,
+因為每次 我們 編寫 table 都必須重置這些屬性
+
+63
+00:02:56,380 --> 00:02:59,020
+sometimes we're going to shorten that up, like this.
+有時我們要縮短.....像這樣 。
+
+64
+00:03:03,740 --> 00:03:06,600
+Here, we've taken all of our content from level one
+在這裡 ， 我們 使用 第一章的所有內容
+
+65
+00:03:06,600 --> 00:03:08,900
+and put that into a table cell.
+並將它放入 一個 table 裡。
+
+66
+00:03:08,900 --> 00:03:13,210
+We've then added a width of 600 to our table.
+我們 再加入 600 寬度 的 table
+
+67
+00:03:13,210 --> 00:03:16,810
+As you can see, the width is being restricted to 600 pixels.
+正如你 所看到的， 寬度 被 限制為 600像素 。
+
+68
+00:03:16,810 --> 00:03:18,850
+However, our styles are still not displaying the way that we want to.
+然而 ， 我們的 style 依然 照我們想要的方式顯示 。
+
+69
+00:03:18,850 --> 00:03:20,330
+However, our styles are still not displaying the way that we want to.
+然而 ， 我們的 style 依然 照我們想要的方式顯示 。
+
+70
+00:03:20,330 --> 00:03:22,920
+One example is that the background styles for our image are still not rendering properly.
+其中一個例子是背景圖片的style仍然沒有正常呈現。
+
+71
+00:03:22,920 --> 00:03:26,850
+One example is that the background styles for our image are still not rendering properly.
+其中一個例子是背景圖片的style仍然沒有正常呈現。
+
+72
+00:03:26,850 --> 00:03:29,760
+The Word rendering engine has very minimal support for styles on any HTML elements, except for the table and table cell.
+Word的 排版引擎 除了<td>之外對任何HTML元素 都有 非常小的 支援。
+
+73
+00:03:29,760 --> 00:03:34,060
+The Word rendering engine has very minimal support for styles on any HTML elements, except for the table and table cell.
+Word的 排版引擎 除了<td>之外對任何HTML元素 都有 非常小的 支援。
+
+74
+00:03:34,060 --> 00:03:35,050
+The Word rendering engine has very minimal support for styles on any HTML elements, except for the table and table cell.
+Word的 排版引擎 除了<td>之外對任何HTML元素 都有 非常小的 支援。
+
+75
+00:03:35,050 --> 00:03:38,980
+This means we need to divide our content into individual table cells that can be styled.
+這意味著我們需要將您的內容轉換成單獨能夠被設定樣式的table。
+
+76
+00:03:38,980 --> 00:03:41,320
+This means we need to divide our content into individual table cells that can be styled.
+這意味著我們需要將您的內容轉換成單獨能夠被設定樣式的table。
+
+77
+00:03:41,320 --> 00:03:43,860
+Let's take a look at how this would affect our header.
+讓我們來 看看這會如何影響 我們的 header 。
+
+78
+00:03:43,860 --> 00:03:48,090
+We can create our header as a single table with three rows,each with a single cell.
+我們可以建一個table中包含三行，且每一行都是一個td。
+
+79
+00:03:48,090 --> 00:03:50,150
+We can create our header as a single table with three rows,each with a single cell.
+我們可以建一個table中包含三行，且每一行都是一個td。
+
+80
+00:03:50,150 --> 00:03:52,290
+Let's take a look at how that looks in code.
+讓我們來 看看 程式碼。
+
+81
+00:03:56,290 --> 00:04:00,500
+The first row has a cell that contains our image,
+第一行 有一個包含 我們的圖片的單元格 ，
+
+82
+00:04:00,500 --> 00:04:04,740
+the second row has a cell that contains our title,
+第二行有一個包含你的標題的單元格，
+
+83
+00:04:04,740 --> 00:04:07,455
+and the third row has a cell that contains our paragraph.
+和 第三行 具有一個包含 了 文字段落 的細胞。
+
+84
+00:04:10,530 --> 00:04:12,620
+We're not going to use the H1 and paragraph element
+我們不打算 使用 H1 和段落元素，
+
+85
+00:04:12,620 --> 00:04:15,820
+so that we don't have to counter any styles that will be added on by clients.
+所以我們 不必 克服任何在客戶端加上去的樣式設定。
+
+86
+00:04:15,820 --> 00:04:17,640
+so that we don't have to counter any styles that will be added on by clients.
+所以我們 不必 克服任何在客戶端加上去的樣式設定。
+
+87
+00:04:21,529 --> 00:04:25,170
+Earlier, we applied our styles directly to our image tag.
+早些時候 ， 我們直接將樣是設定在圖片上。
+
+88
+00:04:25,170 --> 00:04:26,890
+However, to get the best support 
+然而 ， 以獲得最佳 的支援
+
+89
+00:04:26,890 --> 00:04:29,160
+we want to apply our background color and padding to the table cell.
+我們要應用背景顏色和留白在單元欄位上。
+
+90
+00:04:29,160 --> 00:04:31,020
+we want to apply our background color and padding to the table cell.
+我們要應用背景顏色和留白在單元欄位上。
+
+91
+00:04:31,020 --> 00:04:32,750
+Now, you may wonder why we also don't move display: block and max-width: 100% up to the table cell.
+現在，你可能會問，為什麼我們還沒有將display: block和max-width:100%放到table cell上。
+
+92
+00:04:32,750 --> 00:04:37,010
+Now, you may wonder why we also don't move display: block and max-width: 100% up to the table cell.
+現在，你可能會問，為什麼我們還沒有將display: block和max-width:100%放到table cell上。
+
+93
+00:04:37,010 --> 00:04:39,360
+This is because, while it wouldn't cause a problem in this example
+這 是 因為 ， 雖然它 在這個例子中也不會 造成問題 。
+
+94
+00:04:39,360 --> 00:04:42,810
+if we were in a multi-column layout,that could break the layout in some clients.
+如果我們 在多 列佈局 ，這可能會打破一些客戶端的設定。
+
+95
+00:04:42,810 --> 00:04:45,165
+if we were in a multi-column layout,that could break the layout in some clients.
+如果我們 在多 列佈局 ，這可能會打破一些客戶端的設定。
+
+96
+00:04:48,680 --> 00:04:52,200
+Moving on to styling our title, this would be the same process as we did earlier,
+移動style到title去，這是和前面所相同的過程。
+
+97
+00:04:52,200 --> 00:04:54,080
+except that we're applying all of those styles to the table cell.
+除非我們要套用一樣的樣式設定到table中。
+
+98
+00:04:54,080 --> 00:04:57,370
+except that we're applying all of those styles to the table cell.
+除非我們要套用一樣的樣式設定到table中。
+
+99
+00:04:57,370 --> 00:04:58,900
+The one nice thing is, we no longer have to include reset CSS in there,
+其中一個好處是 ， 我們不再需要重新設定CSS
+
+100
+00:04:58,900 --> 00:05:01,720
+The one nice thing is, we no longer have to include reset CSS in there,
+其中一個好處是 ， 我們不再需要重新設定CSS
+
+101
+00:05:01,720 --> 00:05:04,340
+because we're not getting any default styles applied to our cell.
+因為我們 沒有被套用到任何 預設樣式 在單元欄位上。
+
+102
+00:05:04,340 --> 00:05:04,840
+because we're not getting any default styles applied to our cell.
+因為我們 沒有被套用到任何 預設樣式 在單元欄位上。
+
+103
+00:05:08,460 --> 00:05:13,000
+Like before, this text has a combination of layout styles and font styles,
+像之前一樣 ， 本文的布局包含了樣式設定和字體樣式。
+
+104
+00:05:13,000 --> 00:05:15,700
+and we're applying them all directly to the table cell.
+而且我們 將 他們全部 直接 應用在表格單元中。
+
+105
+00:05:15,700 --> 00:05:16,580
+and we're applying them all directly to the table cell.
+而且我們 將 他們全部 直接 應用在表格單元中。
+
+106
+00:05:20,990 --> 00:05:24,999
+Like before, we're going to apply our text-align: center to our containing element,
+像以前一樣，我們要應用text-align: center在本文中。
+
+107
+00:05:24,999 --> 00:05:26,940
+ but now our containing element is a table instead.
+但現在 所包含的元素是用一個表格來代替 。
+
+108
+00:05:26,940 --> 00:05:28,790
+ but now our containing element is a table instead.
+但現在 所包含的元素是用一個表格來代替 。
+
+109
+00:05:28,790 --> 00:05:32,090
+You may wonder why we wouldn't bring all of our font styles up to the table level and allow them to only be set once.
+你可能會 問，為什麼 我們不 把 我們所有的 字體樣式 都列到 <table>，讓他們只會設定一次。
+
+110
+00:05:32,090 --> 00:05:36,230
+You may wonder why we wouldn't bring all of our font styles up to the table level and allow them to only be set once.
+你可能會 問，為什麼 我們不 把 我們所有的 字體樣式 都列到 <table>，讓他們只會設定一次。
+
+111
+00:05:36,230 --> 00:05:37,690
+Here are some examples of some
+這裡 是一些 例子。
+
+112
+00:05:37,690 --> 00:05:40,050
+webmail clients, 
+網絡郵箱 
+
+113
+00:05:40,050 --> 00:05:43,230
+and the default styles that they would set to table cells.
+和會將之設置在單元表格上的預設樣式。
+
+114
+00:05:43,230 --> 00:05:45,590
+As we saw earlier, Gmail will actually set font family of Arial.
+正如我們 前面看到的， Gmail會 實際 設定字體為 Arial。
+
+115
+00:05:45,590 --> 00:05:47,756
+As we saw earlier, Gmail will actually set font family of Arial.
+正如我們 前面看到的， Gmail會 實際 設定字體為 Arial。
+
+116
+00:05:47,756 --> 00:05:49,380
+This means that if we ever have a table cell without the font family set on it, it will default to Arial。
+這 意味著， 如果我們 有一個沒有設定字體樣式的單元表格，他就會被預設為Arial。
+
+117
+00:05:49,380 --> 00:05:51,880
+This means that if we ever have a table cell without the font family set on it, it will default to Arial。
+這 意味著， 如果我們 有一個沒有設定字體樣式的單元表格，他就會被預設為Arial。
+
+118
+00:05:51,880 --> 00:05:53,870
+This means that if we ever have a table cell without the font family set on it, it will default to Arial。
+這 意味著， 如果我們 有一個沒有設定字體樣式的單元表格，他就會被預設為Arial。
+
+119
+00:05:53,870 --> 00:05:56,010
+AOL goes one step further, 
+AOL 更進一步 ，
+
+120
+00:05:56,010 --> 00:05:59,200
+in that they would set the color to black on any table cell that we do not have a color set on.
+他們將 顏色設置為 黑色 在任何 我們沒有設定顏色的表格單元格。
+
+121
+00:05:59,200 --> 00:06:01,570
+in that they would set the color to black on any table cell that we do not have a color set on.
+他們將 顏色設置為 黑色 在任何 我們沒有設定顏色的表格單元格。
+
+122
+00:06:01,570 --> 00:06:03,240
+These examples make it clear 
+這些例子 清楚地表明 我們 。
+
+123
+00:06:03,240 --> 00:06:08,680
+that we need to default to setting font styles on our table cells.
+我們需要 設定字體樣式在 我們的 表格單元上。
+
+124
+00:06:08,680 --> 00:06:11,860
+In level one, we used margin: 0 auto 
+在一個層面上，我們用margin: 0 auto 
+
+125
+00:06:11,860 --> 00:06:14,300
+in order to center our containing element.
+為了使我們的元素可以置中。
+
+126
+00:06:14,300 --> 00:06:16,680
+Now that our containing element is a table,
+現在 ，我們的 含 元素 是一個表 ，
+
+127
+00:06:16,680 --> 00:06:20,130
+we're going to use an HTML attribute, align,
+我們將 使用HTML 屬性 ，對齊(align) ，
+
+128
+00:06:20,130 --> 00:06:22,620
+with a value of center.
+是 中心 的值。
+
+129
+00:06:22,620 --> 00:06:25,205
+With that attribute applied, our table is now centered.
+有了這個屬性的設定，我們的table被置中了。
+
+130
+00:06:28,850 --> 00:06:32,240
+The final step in recreating our header with tables is to add our background.
+創建一個標頭表最後一步就是加入我們的背景。
+
+131
+00:06:32,240 --> 00:06:33,820
+The final step in recreating our header with tables is to add our background.
+創建一個標頭表最後一步就是加入我們的背景。
+
+132
+00:06:33,820 --> 00:06:36,999
+In order to do this, we're going to wrap our container table inside of another table
+為了做到這一點，我們要打包內文表格進入另一個表格中。
+
+133
+00:06:36,999 --> 00:06:40,080
+, and we're going to apply our background to that outer table.
+ 而且我們將應用背景在外部table中 。
+
+134
+00:06:40,080 --> 00:06:43,340
+, and we're going to apply our background to that outer table.
+ 而且我們將應用背景在外部table中 。
+
+135
+00:06:48,840 --> 00:06:51,110
+Remember, it's always important to 
+請記住 ， 很重要的是
+
+136
+00:06:51,110 --> 00:06:54,930
+continue testing how your changes affect multiple clients.
+不停地測試你的修改是如何影響到客戶端的呈現。
+
+137
+00:06:54,930 --> 00:06:58,060
+Here, we can see that our layout is looking great in Outlook
+在這裡，我們可以看到，你的版面在這邊很棒。
+
+138
+00:06:58,060 --> 00:07:01,380
+using Internet Explorer as a rendering engine,
+當使用Internet Explorer 作為 Outlook的排版引擎時 ，
+
+139
+00:07:01,380 --> 00:07:04,500
+Outlook using Microsoft Word as a rendering engine,
+使用Outlook Microsoft Word作為 一個 排版引擎時 ，
+
+140
+00:07:04,500 --> 00:07:07,680
+and Gmail using Chrome's rendering engine.
+和 使用Gmail Chrome的 排版引擎 時。
+
+141
+00:07:07,680 --> 00:07:09,850
+There are some small differences in the font styles,
+在字體樣式上有一些小的差異 ，
+
+142
+00:07:09,850 --> 00:07:11,140
+but we'll tackle those later.
+稍後我們將 解決這些 。
+
+143
+00:07:13,920 --> 00:07:16,320
+Now it's your turn to recreate the header using tables for layout.
+現在 輪到你 創建一個header table 來設定版面 。
+
+144
+00:07:16,320 --> 00:07:18,200
+Now it's your turn to recreate the header using tables for layout.
+現在 輪到你 創建一個header table 來設定版面 。
+
