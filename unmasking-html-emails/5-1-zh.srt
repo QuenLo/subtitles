@@ -1,0 +1,575 @@
+1
+00:00:00,500 --> 00:00:02,620
+[SINGING] Designing emails can be really tough.
+在設計郵件可真難熬。
+
+2
+00:00:02,620 --> 00:00:05,080
+Client preprocessors can be pretty rough.
+客戶端預處理器可以說是相當粗糙。
+
+3
+00:00:05,080 --> 00:00:06,980
+To code email for all their devices,
+要編寫所有裝置的電子郵件程式碼，
+
+4
+00:00:06,980 --> 00:00:09,540
+cut the design into many slices.
+將設計切隔成許多區塊。
+
+5
+00:00:09,540 --> 00:00:11,910
+Mark it up in tables with inline style,
+將它用內嵌的方式加入在表格中，
+
+6
+00:00:11,910 --> 00:00:14,230
+with media queries into one big file.
+和media queries放在同一個檔案中。
+
+7
+00:00:14,230 --> 00:00:16,665
+To win, you'll train and learn the details ??
+要贏，你會學習和練習這些細節。
+
+8
+00:00:16,665 --> 00:00:18,317
+Unmasking HTML Emails!
+揭露 HTML電子郵件！
+
+9
+00:00:24,660 --> 00:00:25,440
+Welcome back.
+歡迎回來。
+
+10
+00:00:25,440 --> 00:00:27,070
+This is level five.
+這是五階段。
+
+11
+00:00:27,070 --> 00:00:29,250
+In modern front-end development, it's very popular to use a mobile-first approach.
+在現代的前端開發，以行動裝置為優先的開發是非常受歡迎的。
+
+12
+00:00:29,250 --> 00:00:31,359
+In modern front-end development, it's very popular to use a mobile-first approach.
+在現代的前端開發，以行動裝置為優先的開發是非常受歡迎的。
+
+13
+00:00:31,359 --> 00:00:33,150
+In this approach, you would create a layout for small screens using a minimal amount of CSS.
+在這種趨勢中，您將創建一個使用最少的CSS給小螢幕使用的本文。
+
+14
+00:00:33,150 --> 00:00:36,420
+In this approach, you would create a layout for small screens using a minimal amount of CSS.
+在這種趨勢中，您將創建一個使用最少的CSS給小螢幕使用的本文。
+
+15
+00:00:36,420 --> 00:00:39,070
+You would then add CSS via media queries as the screen size grew.
+你將透過media queries來加入CSS適應螢幕尺寸的成長。
+
+16
+00:00:39,070 --> 00:00:40,840
+You would then add CSS via media queries as the screen size grew.
+你將透過media queries來加入CSS適應螢幕尺寸的成長。
+
+17
+00:00:40,840 --> 00:00:44,040
+Without consistent media query support in email clients,
+在沒有支援media query的郵件接收裝置上，
+
+18
+00:00:44,040 --> 00:00:46,230
+we have to take a different approach.
+我們要採取不同的方法。
+
+19
+00:00:46,230 --> 00:00:48,550
+In this level, we're going to create a two-column layout
+在這關中，我們將要創造一個有兩行的本文內容
+
+20
+00:00:48,550 --> 00:00:50,850
+layout that functions as a single column layout without media queries.
+它的功能和沒有media queries功能的單一行本文內容相同。
+
+21
+00:00:50,850 --> 00:00:54,485
+layout that functions as a single column layout without media queries.
+它的功能和沒有media queries功能的單一行本文內容相同。
+
+22
+00:00:54,485 --> 00:00:56,110
+Let's first take a look at why we would want to use this approach.
+讓我們先來了解為什麼我們會需要用到這種方法。
+
+23
+00:00:56,110 --> 00:00:58,200
+Let's first take a look at why we would want to use this approach.
+讓我們先來了解為什麼我們會需要用到這種方法。
+
+24
+00:00:58,200 --> 00:01:00,560
+So far, we've been able to use media queries to create a good experience on small screens.
+到目前為止，我們已經能夠應用media queries使之在小螢幕上有好的呈現。
+
+25
+00:01:00,560 --> 00:01:03,130
+So far, we've been able to use media queries to create a good experience on small screens.
+到目前為止，我們已經能夠應用media queries使之在小螢幕上有好的呈現。
+
+26
+00:01:03,130 --> 00:01:05,269
+However, without media query support,
+然而，如果沒有media query的支援 ，
+
+27
+00:01:05,269 --> 00:01:07,920
+the small-screen experience varies.
+小螢幕的呈現都會不同。
+
+28
+00:01:07,920 --> 00:01:09,980
+In the Gmail application, we can see
+在 Gmail應用程式上，我們可以看到
+
+29
+00:01:09,980 --> 00:01:12,970
+that our email is zoomed out.
+電子郵件被縮小了。
+
+30
+00:01:12,970 --> 00:01:15,180
+In the small-screen version of outlook.com,
+在Outlook.com的小屏幕版本上，
+
+31
+00:01:15,180 --> 00:01:17,290
+we see that they don't zoom our email,
+我們看到電子郵件並沒有被縮小，
+
+32
+00:01:17,290 --> 00:01:20,190
+but they also don't force our widths at 100%,
+但他們也不會強迫將寬度設為100％，
+
+33
+00:01:20,190 --> 00:01:25,440
+so you would actually have to pan in order to read the email.
+所以實際上我們需要滑動來閱讀郵件。
+
+34
+00:01:25,440 --> 00:01:27,760
+Zoom is the first problem that we want to fix.
+縮放成了我們首要解決的問題。
+
+35
+00:01:27,760 --> 00:01:30,720
+In order to do this, we need to convert our table widths to fluid widths.
+為了做到這一點，我們需要轉換表格的寬度為浮動的。
+
+36
+00:01:30,720 --> 00:01:32,520
+In order to do this, we need to convert our table widths to fluid widths.
+為了做到這一點，我們需要轉換表格的寬度為浮動的。
+
+37
+00:01:32,520 --> 00:01:35,800
+For our header table, we would set the width to 100%
+我們的頁首將設置寬度為100％。
+
+38
+00:01:35,800 --> 00:01:40,400
+and apply a max width of 600 pixels.
+並套用其最大寬度為600px。
+
+39
+00:01:40,400 --> 00:01:42,200
+Looking at that in the Gmail client,
+看看在 Gmail的客戶端，
+
+40
+00:01:42,200 --> 00:01:44,780
+we can now see that there's no more zoom.
+現在已經沒有任何的縮放。
+
+41
+00:01:48,340 --> 00:01:50,680
+One unfortunate thing about lacking media query support
+一個關於不支援media query的壞處
+
+42
+00:01:50,680 --> 00:01:52,750
+is we have no way of conditionally changing our font sizes.
+是我們沒有辦法用條件去改變字體大小。
+
+43
+00:01:52,750 --> 00:01:54,110
+is we have no way of conditionally changing our font sizes.
+是我們沒有辦法用條件去改變字體大小。
+
+44
+00:01:54,110 --> 00:01:57,629
+Here, we can see that our title text was set to 74 pixels,
+在這裡，我們可以看到我們將標題設定為74px，
+
+45
+00:01:57,629 --> 00:01:59,170
+and without media queries, it's going to remain that way in every client.
+在沒有media queries的情況下，這將在每個裝置上都保持一樣。
+
+46
+00:01:59,170 --> 00:02:01,430
+and without media queries, it's going to remain that way in every client.
+在沒有media queries的情況下，這將在每個裝置上都保持一樣。
+
+47
+00:02:01,430 --> 00:02:03,960
+This is the first problem that we weren't able to fix.
+這是第一個我們無法解決的問題。
+
+48
+00:02:03,960 --> 00:02:07,560
+However, having the text large makes it more readable than
+然而，字體較大也比較容易閱讀
+
+49
+00:02:07,560 --> 00:02:10,449
+when it's zoomed out and small, and this is a good trade-off.
+當其縮小了之後，這是個很好的權衡方式。
+
+50
+00:02:14,470 --> 00:02:16,440
+Continuing down the content of our email,
+繼續往下看郵件的內容，
+
+51
+00:02:16,440 --> 00:02:19,209
+we would apply those same styles to our table
+我們將繼續應用一樣的設定到其他表格上。
+
+52
+00:02:19,209 --> 00:02:20,375
+that's containing our image.
+這一個包含了圖片
+
+53
+00:02:20,375 --> 00:02:23,180
+So here again, we're applying width of 100%
+所以，在此我們將寬度設為100%
+
+54
+00:02:23,180 --> 00:02:25,660
+and max width of 600 pixels.
+和最大寬度為600px。
+
+55
+00:02:25,660 --> 00:02:27,980
+And this maintains no zoom in Gmail.
+一樣在Gmail中沒有縮放。
+
+56
+00:02:30,990 --> 00:02:34,260
+Without media queries, a table row with two cells will always align horizontally.
+在沒有media queries的情況下，表格中的兩列永遠是對齊的。
+
+57
+00:02:34,260 --> 00:02:36,690
+Without media queries, a table row with two cells will always align horizontally.
+在沒有media queries的情況下，表格中的兩列永遠是對齊的。
+
+58
+00:02:36,690 --> 00:02:40,370
+The content in each of these cells is set to 300 pixels,
+文中每一個單元格都設定為300px，
+
+59
+00:02:40,370 --> 00:02:43,230
+causing a total width of 600 pixels.
+這造成總寬度變為600px。
+
+60
+00:02:43,230 --> 00:02:47,960
+Our available area is only 320 pixels, triggering zoom.
+我們可用顯示區域只有320px，這引發了縮小。
+
+61
+00:02:47,960 --> 00:02:50,440
+We need a way for these two content tables to stack on top of each other without media queries.
+我們需要一種方法，在沒有media queries之下使此兩個表格彼此推疊。
+
+62
+00:02:50,440 --> 00:02:55,730
+We need a way for these two content tables to stack on top of each other without media queries.
+我們需要一種方法，在沒有media queries之下使此兩個表格彼此推疊。
+
+63
+00:02:55,730 --> 00:02:59,270
+Without media queries, table cells won't stack vertically.
+沒有media queries，單元表格不會垂直的堆疊在一起。
+
+64
+00:02:59,270 --> 00:03:02,670
+However, there is a way to make tables stack vertically
+然而，有一種方式可以使表格垂直的堆疊。
+
+65
+00:03:02,670 --> 00:03:05,370
+if there is not enough horizontal space,or stack horizontally if there is.
+如果當其沒有足夠的水平空間，或是可以水平的堆疊在可云許的情況下。
+
+66
+00:03:05,370 --> 00:03:08,160
+if there is not enough horizontal space,or stack horizontally if there is.
+如果當其沒有足夠的水平空間，或是可以水平的堆疊在可云許的情況下。
+
+67
+00:03:08,160 --> 00:03:11,260
+The way that we do this is assigning a value of left to the align attribute of a table.
+我們的方式是指定表格的屬性為向左對齊。
+
+68
+00:03:11,260 --> 00:03:13,345
+The way that we do this is assigning a value of left to the align attribute of a table.
+我們的方式是指定表格的屬性為向左對齊。
+
+69
+00:03:17,690 --> 00:03:19,680
+We have our table of content.
+我們有了內容的表格。
+
+70
+00:03:19,680 --> 00:03:21,000
+We're going to take that table and nest it
+我們將使用該表，
+
+71
+00:03:21,000 --> 00:03:26,890
+and nest it in a table with a width of 300 pixels and set to align left.
+將其放入寬度為300px的表中，並設置為向左對齊。
+
+72
+00:03:26,890 --> 00:03:28,470
+We're then going to take that column
+我們將要使用該行列。
+
+73
+00:03:28,470 --> 00:03:32,500
+and nest it in a container table with a width of 100% and a max width of 600 pixels.
+並且放在一個設定寬度為100%，最大寬度為600px的表格。
+
+74
+00:03:32,500 --> 00:03:34,535
+and nest it in a container table with a width of 100% and a max width of 600 pixels.
+並且放在一個設定寬度為100%，最大寬度為600px的表格。
+
+75
+00:03:40,730 --> 00:03:42,480
+Next, we're going to repeat the same thing for the second column.
+接下來，我們要在第二列重複同樣的事情。
+
+76
+00:03:42,480 --> 00:03:43,490
+Next, we're going to repeat the same thing for the second column.
+接下來，我們要在第二列重複同樣的事情。
+
+77
+00:03:43,490 --> 00:03:45,650
+We have our table for content.
+我們有內容表格。
+
+78
+00:03:45,650 --> 00:03:48,520
+We're going to nest that in a column table,
+我們要將他放在一個行列表格中，
+
+79
+00:03:48,520 --> 00:03:50,860
+and then we're going to nest both of those tables in the same container table.
+然後我們要這些表格都放入一樣的內容表格中。
+
+80
+00:03:50,860 --> 00:03:54,220
+and then we're going to nest both of those tables in the same container table.
+然後我們要這些表格都放入一樣的內容表格中。
+
+81
+00:03:54,220 --> 00:03:57,654
+Now we have both of our content tables stacked vertically without media queries.
+現在我們已經將兩個表格在沒有media queries之下垂直堆疊了。
+
+82
+00:03:57,654 --> 00:03:58,570
+Now we have both of our content tables stacked vertically without media queries.
+現在我們已經將兩個表格在沒有media queries之下垂直堆疊了。
+
+83
+00:04:01,990 --> 00:04:04,990
+While we're focused on creating this layout without media queries,
+當我們專注在產生一個沒有使用media queries的文本時，
+
+84
+00:04:04,990 --> 00:04:07,080
+we want to keep in mind how this is going to affect our other clients.
+我們要記得這是怎樣的去影響其他的客戶端裝置。
+
+85
+00:04:07,080 --> 00:04:09,330
+we want to keep in mind how this is going to affect our other clients.
+我們要記得這是怎樣的去影響其他的客戶端裝置。
+
+86
+00:04:09,330 --> 00:04:11,640
+Earlier, we had classes with styles
+早些時候，我們在style中加入class 
+
+87
+00:04:11,640 --> 00:04:14,090
+that forced our columns to full width and provided some vertical spacing.
+這迫使列要符合寬度且有一些的垂直間距。
+
+88
+00:04:14,090 --> 00:04:16,436
+that forced our columns to full width and provided some vertical spacing.
+這迫使列要符合寬度且有一些的垂直間距。
+
+89
+00:04:16,436 --> 00:04:17,810
+To make sure that those are still available for our other clients,
+為了確保這些在客戶接收端都還可以適用，
+
+90
+00:04:17,810 --> 00:04:19,170
+To make sure that those are still available for our other clients,
+為了確保這些在客戶接收端都還可以適用，
+
+91
+00:04:19,170 --> 00:04:21,779
+we need to add them back to our tables and cells.
+我們需要將他們加到表格和單元格中。
+
+92
+00:04:27,110 --> 00:04:28,620
+We've fixed our stacking problem,
+我們已經解決了堆疊的問題，
+
+93
+00:04:28,620 --> 00:04:30,260
+but we've created a new problem.
+但我們卻創建了一個新的問題。
+
+94
+00:04:30,260 --> 00:04:33,990
+When the horizontal space isn't enough to hold both columns,
+當水平的空間不足以容納兩個列，
+
+95
+00:04:33,990 --> 00:04:36,670
+but it's bigger than each individual column,
+但他又比單一個列還要大，
+
+96
+00:04:36,670 --> 00:04:38,560
+the two tables are going to align to the left of the client.
+這兩個表都會像裝置端的左邊對齊。
+
+97
+00:04:38,560 --> 00:04:39,870
+the two tables are going to align to the left of the client.
+這兩個表都會像裝置端的左邊對齊。
+
+98
+00:04:43,980 --> 00:04:46,810
+If we really want those two columns centered,
+如果我們想要這兩列可以置中，
+
+99
+00:04:46,810 --> 00:04:49,180
+the solution is somewhat hacky.
+解決方式是有些的投機。
+
+100
+00:04:49,180 --> 00:04:52,270
+What we would do is take each table column and wrap it in a div.
+我們將每一個表格的列都包進div
+
+101
+00:04:52,270 --> 00:04:54,520
+What we would do is take each table column and wrap it in a div.
+我們將每一個表格的列都包進div
+
+102
+00:04:54,520 --> 00:04:58,575
+We would then apply display: inline-block to those divs.
+然後再將 display: inline-block應用到這些div上。
+
+103
+00:05:05,890 --> 00:05:08,390
+We can then set text-align: center on 
+這麼一來我們就可以設定 text-align: center 在
+
+104
+00:05:08,390 --> 00:05:12,242
+the containing cell, which will shift both of those divs to the center.
+這些會將divs設定置中的單元格中。
+
+105
+00:05:12,242 --> 00:05:12,825
+the containing cell, which will shift both of those divs to the center.
+這些會將divs設定置中的單元格中。
+
+106
+00:05:17,220 --> 00:05:19,370
+We've now run into another edge case problem.
+現在我們進入到另一個邊界問題。
+
+107
+00:05:19,370 --> 00:05:23,340
+Outlook.com's preprocessor removes margin properties from our inline styles.
+outlook.com的預處理器移除了我們在inline style的邊界設定。
+
+108
+00:05:23,340 --> 00:05:25,420
+Outlook.com's preprocessor removes margin properties from our inline styles.
+outlook.com的預處理器移除了我們在inline style的邊界設定。
+
+109
+00:05:25,420 --> 00:05:27,810
+However, it won't remove the property if you use a capital "M" for margin.
+但是，當我們使用的是"M"argin時，他並不會移除屬性。
+
+110
+00:05:27,810 --> 00:05:31,150
+However, it won't remove the property if you use a capital "M" for margin.
+但是，當我們使用的是"M"argin時，他並不會移除屬性。
+
+111
+00:05:31,150 --> 00:05:32,940
+To fix the layout for this table,
+為了修復本文的格局，
+
+112
+00:05:32,940 --> 00:05:38,235
+we're going to change the "m" to a capital "M" for Margin: 0 auto.
+我們要將小寫的m換成M，Margin:0 auto。
+
+113
+00:05:38,235 --> 00:05:41,950
+Our multi-column layout is now working as a single column layout without media queries on small screens.
+我們原本的多欄佈局本文，現在是以沒有media queries的單行本文的方式顯示在小螢幕上。
+
+114
+00:05:41,950 --> 00:05:45,220
+Our multi-column layout is now working as a single column layout without media queries on small screens.
+我們原本的多欄佈局本文，現在是以沒有media queries的單行本文的方式顯示在小螢幕上。
+
+115
+00:05:45,220 --> 00:05:48,840
+Now it's your turn to make that happen in the challenges.
+現在是時候輪到你在挑戰中實作了。
+
