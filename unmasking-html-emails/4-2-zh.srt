@@ -1,0 +1,284 @@
+1
+00:00:02,050 --> 00:00:03,114
+Welcome back.
+歡迎回來。
+
+2
+00:00:03,114 --> 00:00:04,780
+In this section, we're going to continue
+在本節中，我們將繼續
+
+3
+00:00:04,780 --> 00:00:06,670
+adding content to our email.
+添加內容到我們的電子郵件中。
+
+4
+00:00:06,670 --> 00:00:09,650
+We're going to use conditional content to add a button that will work in multiple clients.
+我們將使用條件的內容去添加一個可以正常在多個客戶端使用的按鈕 。
+
+5
+00:00:09,650 --> 00:00:12,680
+We're going to use conditional content to add a button that will work in multiple clients.
+我們將使用條件的內容去添加一個可以正常在多個客戶端使用的按鈕 。
+
+6
+00:00:12,680 --> 00:00:14,650
+Typically, the way that we would add a button
+通常情況下， 我們添加一個按鈕的方式是
+
+7
+00:00:14,650 --> 00:00:17,970
+is we would add an anchor tag and apply styles to it.
+我們會增加一個<a>，並在其中應用style。
+
+8
+00:00:17,970 --> 00:00:20,100
+This would work in any clients that use browser-based rendering engines, 
+這將呈現在各種使用瀏覽器排版引擎的客戶端
+
+9
+00:00:20,100 --> 00:00:23,220
+but as we've learned,
+但 我們已經知道 ，
+
+10
+00:00:23,220 --> 00:00:27,140
+these styles would not apply to the Word rendering engine.
+這些style設定並不適用於word排版引擎。
+
+11
+00:00:27,140 --> 00:00:31,040
+What we need is a way to write code that Microsoft Word would apply these styles.
+我們需要的是一種方法來編寫代碼，讓微軟Word會應用這些style。
+
+12
+00:00:31,040 --> 00:00:33,640
+What we need is a way to write code that Microsoft Word would apply these styles.
+我們需要的是一種方法來編寫代碼，讓微軟Word會應用這些style。
+
+13
+00:00:33,640 --> 00:00:35,880
+If you're interested in learning that language,
+如果你有興趣學習這款語言，
+
+14
+00:00:35,880 --> 00:00:39,780
+you can look forward to our future course, Try VML.
+你可以期待我們未來的課程 -- Try VML 。
+
+15
+00:00:39,780 --> 00:00:40,830
+Of course, I'm kidding.
+當然，我在開玩笑 @.@
+
+16
+00:00:40,830 --> 00:00:42,390
+We would never create that course,
+我們永遠不會推出該課程 0.0
+
+17
+00:00:42,390 --> 00:00:44,490
+and no one really wants to write this code,
+沒有人真正想要寫這個程式，
+
+18
+00:00:44,490 --> 00:00:47,900
+so we're going to do that in a different way.
+所以我們要不同的方式來處理。
+
+19
+00:00:47,900 --> 00:00:50,000
+Luckily, there's an excellent resource on the web
+幸運的是，網路上有一個很好的資源
+
+20
+00:00:50,000 --> 00:00:53,170
+created by Stig at Campaign Monitor called buttons.cm.
+由Stig在Campaign Monitort創建的 buttons.cm.
+
+21
+00:00:53,170 --> 00:00:55,210
+created by Stig at Campaign Monitor called buttons.cm.
+由Stig在Campaign Monitort創建的 buttons.cm.
+
+22
+00:00:55,210 --> 00:00:58,140
+This allows us to create a button using a GUI to enter value
+這允許我們使用GUI來創建一個按鈕
+
+23
+00:00:58,140 --> 00:01:01,710
+and outputs two versions of a button —
+並輸出兩個不同版本的按鈕---
+
+24
+00:01:01,710 --> 00:01:06,000
+one that would use VML and HTML that will render in the Word rendering engine,
+一個會在word排版引擎中使用VML和HTML
+
+25
+00:01:06,000 --> 00:01:08,450
+one that would use VML and HTML that will render in the Word rendering engine, 
+一個會在word排版引擎中使用VML和HTML
+
+26
+00:01:08,920 --> 00:01:11,360
+and one using just HTML that would render in all other rendering engines.
+另一個是只有使用HTML，這可以應用在其他所有排版引擎中。
+
+27
+00:01:14,420 --> 00:01:17,640
+Our first step would be to take the code from the generator
+我們的第一步是採取代碼生成器
+
+28
+00:01:17,640 --> 00:01:21,320
+and put it into a table cell in our email.
+並把它在您的電子郵件中變成一個表格單元格。
+
+29
+00:01:21,320 --> 00:01:23,670
+Once that code is in, we can test and see
+一旦將代碼放進去，我們就可以測試看看。
+
+30
+00:01:23,670 --> 00:01:25,510
+that we have a consistent experience across multiple clients.
+我們在多個客戶端上有一致的體驗。
+
+31
+00:01:25,510 --> 00:01:26,790
+that we have a consistent experience across multiple clients.
+我們在多個客戶端上有一致的結果。
+
+32
+00:01:30,620 --> 00:01:32,460
+While we do have a consistent experience,
+然而，我們有一致的結果
+
+33
+00:01:32,460 --> 00:01:35,900
+it doesn't match our design exactly how we want it to,
+他卻沒有徹底的符合我們想要的設計，
+
+34
+00:01:35,900 --> 00:01:38,220
+so we're going to need to update the code.
+所以我們需要更新程式碼。
+
+35
+00:01:38,220 --> 00:01:39,960
+The first area that we're going to update
+我們第一個要更新的地方是
+
+36
+00:01:39,960 --> 00:01:45,360
+is the center tag within the VML tag.
+標記在VML中的tag。
+
+37
+00:01:45,360 --> 00:01:49,150
+We're going to add our font that we want on the button of Arial.
+我們要增加我們想要的Arial字型在按鈕中。
+
+38
+00:01:49,150 --> 00:01:51,280
+We're going to up the font size to 20 pixels,
+我們要將字體提升到20px，
+
+39
+00:01:51,280 --> 00:01:54,270
+and then add in our text transform uppercase.
+然後增加將文字變成大寫。
+
+40
+00:01:54,270 --> 00:01:55,810
+The interesting thing about this is that,
+關於這個，有趣的是
+
+41
+00:01:55,810 --> 00:01:58,210
+if you now test in multiple clients,
+如果測試多個客戶端，
+
+42
+00:01:58,210 --> 00:02:01,430
+you would only see these changes in clients using Word as a rendering engine.
+你只能在word排版引擎中看到這些變化。
+
+43
+00:02:01,430 --> 00:02:03,300
+you would only see these changes in clients using Word as a rendering engine.
+你只能在word排版引擎中看到這些變化。
+
+44
+00:02:03,300 --> 00:02:05,390
+This is because the VML is wrapped in a conditional tag that is targeting specifically Microsoft Outlook.
+這是因為VML被包在一個Microsoft Outlook的條件標籤中
+
+45
+00:02:05,390 --> 00:02:08,419
+This is because the VML is wrapped in a conditional tag that is targeting specifically Microsoft Outlook.
+這是因為VML被包在一個Microsoft Outlook的條件標籤中
+
+46
+00:02:08,419 --> 00:02:09,314
+This is because the VML is wrapped in a conditional tag that is targeting specifically Microsoft Outlook.
+這是因為VML被包在一個Microsoft Outlook的條件標籤中
+
+47
+00:02:11,816 --> 00:02:14,190
+Updating the style of our button in the remaining clients is as easy as editing our HTML.
+在其餘客戶端更新我們的按鈕的樣式和編輯HTML一樣容易。
+
+48
+00:02:14,190 --> 00:02:16,940
+Updating the style of our button in the remaining clients is as easy as editing our HTML.
+在其餘客戶端更新我們的按鈕的樣式和編輯HTML一樣容易。
+
+49
+00:02:16,940 --> 00:02:19,850
+The one interesting thing to note is 
+一個有趣的事情要注意的是，
+
+50
+00:02:19,850 --> 00:02:23,180
+the reason that these styles get hidden from Microsoft Word is the special vendor property mso-hide:all;.
+styles被Microsoft Word隱藏的原因是因為特殊的內建屬性--mso-hide:all;
+
+51
+00:02:23,180 --> 00:02:31,390
+the reason that these styles get hidden from Microsoft Word is the special vendor property mso-hide:all;.
+styles被Microsoft Word隱藏的原因是因為特殊的內建屬性--mso-hide:all;
+
+52
+00:02:31,390 --> 00:02:33,880
+Taking a look at our email in multiple clients,
+來看看更多不同客戶端的樣子
+
+53
+00:02:33,880 --> 00:02:36,190
+we now see that we have a button that works well in Outlook using Internet Explorer and Outlook using Microsoft Word.
+我們現在看到，按鈕在使用IE和Microsoft Word為排版引擎的Outlook中都是對的。
+
+54
+00:02:36,190 --> 00:02:39,210
+we now see that we have a button that works well in Outlook using Internet Explorer and Outlook using Microsoft Word.
+我們現在看到，按鈕在使用IE和Microsoft Word為排版引擎的Outlook中都是對的。
+
+55
+00:02:39,210 --> 00:02:42,440
+we now see that we have a button that works well in Outlook using Internet Explorer and Outlook using Microsoft Word.
+我們現在看到，按鈕在使用IE和Microsoft Word為排版引擎的Outlook中都是對的。
+
+56
+00:02:42,440 --> 00:02:45,740
+Now it's your turn to use VML and HTML to create a bulletproof button in the challenges.
+現在輪到你在挑戰中使用VML和HTML創建一個按鈕
+
+57
+00:02:45,740 --> 00:02:48,720
+Now it's your turn to use VML and HTML to create a bulletproof button in the challenges.
+現在輪到你在挑戰中使用VML和HTML創建一個按鈕
