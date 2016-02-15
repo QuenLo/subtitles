@@ -1,0 +1,536 @@
+1
+00:00:00,500 --> 00:00:02,620
+[SINGING] Designing emails can be really tough.
+在設計 郵件 可真 難熬。
+
+2
+00:00:02,620 --> 00:00:05,080
+Client preprocessors can be pretty rough.
+客戶端 預處理器 可以是相當 粗糙。
+
+3
+00:00:05,080 --> 00:00:07,380
+To code email for all their devices,
+編寫 電子郵件 的 所有設備 ，
+
+4
+00:00:07,380 --> 00:00:09,240
+cut the design into many slices.
+切 設計 成很多 片。
+
+5
+00:00:09,240 --> 00:00:11,910
+Mark it up in tables with inline style,
+與 內嵌樣式 表 標記 起來 ，
+
+6
+00:00:11,910 --> 00:00:14,230
+with media queries into one big file.
+有 媒體查詢 成一個大文件 。
+
+7
+00:00:14,230 --> 00:00:16,665
+To win, you'll train and learn the details —
+要贏， 你會 訓練和 學習 的細節 - 。
+
+8
+00:00:16,665 --> 00:00:17,830
+Unmasking HTML Emails!
+揭露 HTML 電子郵件！
+
+9
+00:00:24,230 --> 00:00:26,520
+Welcome back to Unmasking HTML Emails.
+歡迎回到 揭露 HTML電子郵件 。
+
+10
+00:00:26,520 --> 00:00:28,250
+This is level three.
+這是 第三階段。
+
+11
+00:00:28,250 --> 00:00:30,930
+In your first two levels, you had some really tough opponents.
+在前兩個 階段 ， 你遇到了一些相對較難應付的阻擋 。
+
+12
+00:00:30,930 --> 00:00:31,967
+In your first two levels, you had some really tough opponents.
+在前兩個 階段 ， 你遇到了一些相對較難應付的阻礙 。
+
+13
+00:00:31,967 --> 00:00:33,800
+Compared to them, the opponent in this level
+相比起來 ， 在 這個階段 的 阻礙 
+
+14
+00:00:33,800 --> 00:00:37,010
+is going to feel a little bit more like a sparring match.
+會覺得比較像是 輕鬆的散打阻礙 。
+
+15
+00:00:37,010 --> 00:00:39,610
+Here, we're going to use media queries to adjust our layout for smaller screens our layout for smaller screens.
+在這裡 ， 我們將 使用 媒體查詢 作為在較小銀幕裝置時進行調整的依據。
+
+16
+00:00:39,610 --> 00:00:41,395
+Here, we're going to use media queries to adjust our layout for smaller screens our layout for smaller screens.
+在這裡 ， 我們將 使用 媒體查詢 作為在較小銀幕裝置時進行調整的依據。
+
+17
+00:00:44,250 --> 00:00:46,610
+We can see here that our text isn't as big as we had expected it to be.
+我們可以在這裡看到你的文字大小並非我們預期的那樣大。 
+
+18
+00:00:46,610 --> 00:00:47,980
+We can see here that our text isn't as big as we had expected it to be.
+我們可以在這裡看到你的文字大小並非我們預期的那樣大。 
+
+
+19
+00:00:47,980 --> 00:00:50,080
+These are set at very high values,
+這些 被設定為 重要的，
+
+20
+00:00:50,080 --> 00:00:51,670
+and yet they're very small and fitting in a single line on the phone.
+但他們 在手機上只佔有行小小的單行。
+
+21
+00:00:51,670 --> 00:00:54,080
+and yet they're very small and fitting in a single line on the phone.
+但他們 在手機上只佔有行小小的單行。
+
+22
+00:00:54,080 --> 00:00:57,680
+This is because we are setting fixed widths on our layout.
+這是 因為我們 在設定版面時是用 固定寬度。
+
+23
+00:00:57,680 --> 00:01:01,160
+So we're telling the phone to display this table at 600 pixels,
+所以我們 呼叫手機螢幕顯示 600 pixels
+
+24
+00:01:01,160 --> 00:01:05,750
+but it only has 320 pixels available to view it.
+但 它 只能用320 pixels來顯示。
+
+25
+00:01:05,750 --> 00:01:08,955
+What it does to correct this is, it shrinks the email down so that everything can fit.
+為了修正這個，裝置將郵件縮小以符合手機螢幕大小
+
+26
+00:01:08,955 --> 00:01:12,360
+What it does to correct this is, it shrinks the email down so that everything can fit.
+為了修正這個，裝置將郵件縮小以符合手機螢幕大小
+
+27
+00:01:12,360 --> 00:01:14,550
+Our solution for that is to use CSS to force the width of the table to be 100% of the container.
+我們可以用CSS來強制表格的寬度裝置的變為100%。
+
+28
+00:01:14,550 --> 00:01:18,730
+Our solution for that is to use CSS to force the width of the table to be 100% of the container.
+我們可以用CSS來強制表格的寬度裝置的變為100%。
+
+29
+00:01:18,730 --> 00:01:20,700
+This is okay, because any client that would support media queries will also support putting CSS in a style tag.
+這是可行的 ， 因為任何 支援 media queries 的客戶端 也都會支援將CSS放進 style中 。
+
+30
+00:01:20,700 --> 00:01:23,380
+This is okay, because any client that would support media queries will also support putting CSS in a style tag.
+這是可行的 ， 因為任何 支援 media queries 的客戶端 也都會支援將CSS放進 style中 。
+
+31
+00:01:23,380 --> 00:01:26,460
+This is okay, because any client that would support media queries will also support putting CSS in a style tag.
+這是可行的 ， 因為任何 支援 media queries 的客戶端 也都會支援將CSS放進 style中 。
+
+32
+00:01:26,460 --> 00:01:29,310
+Once we create our rule, we can apply that to each table using a class attribute.
+一旦我們 建立 我們的規則 ， 我們 可以將它應用在每個表的class中。
+
+33
+00:01:29,310 --> 00:01:33,270
+Once we create our rule, we can apply that to each table using a class attribute.
+一旦我們 建立 我們的規則 ， 我們 可以將它應用在每個表的class中。
+
+34
+00:01:33,270 --> 00:01:36,690
+You can now see that our table is taking up the full width,
+你現在可以看到 ，我們的 表 佔滿了 全寬 ，
+
+35
+00:01:36,690 --> 00:01:39,630
+and our fonts are big like we expected them to be.
+而字體也和我們所期望的一樣大。
+
+36
+00:01:43,060 --> 00:01:46,500
+While we do want these styles to apply to any client that does support media queries,
+雖然我們 確實希望 這些樣式 應用到 任何 支援 media support 的客戶端 。
+
+37
+00:01:46,500 --> 00:01:48,280
+we don't want it to always impact our tables.
+但我們不想要表格一直都被影響到。
+
+38
+00:01:48,280 --> 00:01:51,430
+we don't want it to always impact our tables.
+但我們不想要表格一直都被影響到。
+
+39
+00:01:51,430 --> 00:01:56,000
+We only want this width of 100% to apply when our screen size is less than 600 pixels,
+我們只想要當螢幕小於 600 pixels時 才應用寬度100%的設定。
+
+40
+00:01:56,000 --> 00:01:58,130
+so we're going to use a media query with a max width of 600 pixels to hold our rule.
+所以我們要藉由 media query 來界定 最大寬度 600 pixels
+
+41
+00:01:58,130 --> 00:02:01,450
+so we're going to use a media query with a max width of 600 pixels to hold our rule.
+所以我們要藉由 media query 來界定 最大寬度 600 pixels
+42
+00:02:01,450 --> 00:02:02,270
+so we're going to use a media query with a max width of 600 pixels to hold our rule.
+所以我們要藉由 media query 來界定 最大寬度 600 pixels
+
+43
+00:02:07,210 --> 00:02:10,940
+We want a little bit of space in between our table and the edges of the client.
+我們 希望在我們的 表格 與 客戶端的顯示螢幕邊緣之間  有一點點空間 。
+
+44
+00:02:10,940 --> 00:02:11,930
+We want a little bit of space in between our table and the edges of the client.
+我們 希望在我們的 表格 與 客戶端的顯示螢幕邊緣之間  有一點點空間 。
+
+45
+00:02:11,930 --> 00:02:13,850
+In order to do that, we're going to move back up to the table that's containing all of our content tables,
+為了 做到這一點， 我們要將表格設定移到最上方包含所有內容的地方 。
+
+46
+00:02:13,850 --> 00:02:16,790
+In order to do that, we're going to move back up to the table that's containing all of our content tables,
+為了 做到這一點， 我們要將表格設定移到最上方包含所有內容的地方 。
+
+47
+00:02:16,790 --> 00:02:19,540
+and on that first cell, we're going to apply padding of 10 pixels to the left and right.
+並在該 第一個單元格 ， 我們設定 左右各 10 pixels的留白 。
+
+48
+00:02:19,540 --> 00:02:22,890
+and on that first cell, we're going to apply padding of 10 pixels to the left and right.
+並在該 第一個單元格 ， 我們設定 左右各 10 pixels的留白 。
+
+49
+00:02:26,530 --> 00:02:30,210
+If we scroll down to our two columns in our email,
+如果我們在電子郵件中下向滑動兩列，
+
+50
+00:02:30,210 --> 00:02:32,130
+we would hope that, on small screens,they would stack like this.
+我們希望 的是， 在小屏幕上 他們是會這樣堆疊的，
+
+51
+00:02:32,130 --> 00:02:33,950
+we would hope that, on small screens,they would stack like this.
+我們希望 的是， 在小屏幕上 他們是會這樣堆疊的，
+
+52
+00:02:33,950 --> 00:02:36,125
+However, right now, they look like this.
+然而 ，現在， 他們 看起來是這樣 。
+
+53
+00:02:40,100 --> 00:02:42,800
+To fix this, we're going to add a class with styles to make each column display block and width 100%.
+要 解決這個問題， 我們要 添加一個 class 在 style中，用來 設定每一列都是以區塊顯示且寬度100%。
+
+54
+00:02:42,800 --> 00:02:47,020
+To fix this, we're going to add a class with styles to make each column display block and width 100%.
+要 解決這個問題， 我們要 添加一個 class 在 style中，用來 設定每一列都是以區塊顯示且寬度100%。。
+
+55
+00:02:47,020 --> 00:02:50,890
+We'll then apply that class to each table cell.
+然後我們將 此class 適用於每個 表格單元格。
+
+56
+00:02:50,890 --> 00:02:52,990
+Now you can see that the two columns are stacked on top of each other.
+現在你可以 看到， 兩列 互相堆疊在頂部。
+
+57
+00:02:52,990 --> 00:02:54,400
+Now you can see that the two columns are stacked on top of each other.
+現在你可以 看到， 兩列 互相堆疊在頂部。
+
+58
+00:02:57,429 --> 00:02:58,970
+Now that the two columns are stacked,
+現在 ，這兩個 列 被堆疊 ，
+
+59
+00:02:58,970 --> 00:03:00,630
+we have an alignment issue, 
+我們有一個 定位 問題 ， 
+
+60
+00:03:00,630 --> 00:03:02,860
+And this is from when we created a padding right on the first cell and a padding left on the second cell.
+這是因為我們設定了第一的區塊右邊的留白和第二個區塊左邊的留白
+
+61
+00:03:02,860 --> 00:03:05,770
+And this is from when we created a padding right on the first cell and a padding left on the second cell.
+這是因為我們設定了第一的區塊右邊的留白和第二個區塊左邊的留白
+
+62
+00:03:05,770 --> 00:03:07,000
+And this is from when we created a padding right on the first cell and a padding left on the second cell.
+這是因為我們設定了第一的區塊右邊的留白和第二個區塊左邊的留白
+
+63
+00:03:07,000 --> 00:03:12,040
+We don't need that padding when we're on a small screen.
+當我們是在小螢幕時，不需要這樣的留白 。
+
+64
+00:03:12,040 --> 00:03:16,000
+Removing the padding can be done by adding a property
+可以在stack column class 增加一種屬性來去除留白位移。
+
+65
+00:03:16,000 --> 00:03:17,640
+and using our important declarative.
+以及使用 ！important(強行鎖定限制)。
+
+66
+00:03:17,640 --> 00:03:19,680
+and using our important declarative.
+以及使用 ！important(強行鎖定限制)。
+
+67
+00:03:19,680 --> 00:03:22,610
+Our two columns are now taking up all of their available space with no padding.
+我們的 兩列 ，現在 佔滿了 他們所有的 可用空間 且沒有留白位移。
+
+68
+00:03:22,610 --> 00:03:23,385
+Our two columns are now taking up all of their available space with no padding.
+我們的 兩列 ，現在 佔滿了 他們所有的 可用空間 且沒有留白位移。
+
+69
+00:03:26,920 --> 00:03:29,090
+Our layout is now working properly.
+我們的版面執行顯示的不正常。
+
+70
+00:03:29,090 --> 00:03:31,950
+We can add some details to improve the overall look of the content
+我們可以添加 一些細節 來提高 整體內容的外觀 。
+
+71
+00:03:31,950 --> 00:03:33,140
+We can add some details to improve the overall look of the content
+我們可以添加 一些細節 來提高 整體內容的外觀 。
+
+72
+00:03:33,140 --> 00:03:35,310
+In between our two columns, we want to add some vertical space.
+在我們的 兩列 之間 ， 我們想要增加一些橫向間隔。
+
+73
+00:03:35,310 --> 00:03:36,545
+In between our two columns, we want to add some vertical space.
+在我們的 兩列 之間 ， 我們想要增加一些橫向間隔。
+
+74
+00:03:39,304 --> 00:03:40,970
+You'll probably recognize this solution.
+你可能會 認識到這樣 的解決方案 。
+
+75
+00:03:40,970 --> 00:03:42,900
+We add a class to our media query,
+我們 添加class到 media query中 ，
+
+76
+00:03:42,900 --> 00:03:45,370
+and then apply that class to a table cell.
+然後 將class 應用到 表格單元 。
+
+77
+00:03:51,170 --> 00:03:53,430
+Here we can see that we get inconsistent results with our font family.
+在這裡我們 可以看到，我們 的字體 有 不一致的結果顯示 。
+
+78
+00:03:53,430 --> 00:03:54,930
+Here we can see that we get inconsistent results with our font family.
+在這裡我們 可以看到，我們 的字體 有 不一致的結果顯示 。
+
+79
+00:03:54,930 --> 00:03:57,360
+There are a few places where our font family that we set of Arial Black is missing.
+有幾個 我們設定為 黑色宋體的地方 並沒有被這樣設定 。
+
+80
+00:03:57,360 --> 00:04:00,040
+There are a few places where our font family that we set of Arial Black is missing.
+有幾個 我們設定為 黑色宋體的地方 並沒有被這樣設定 。
+
+81
+00:04:00,040 --> 00:04:02,900
+This is because it's not available on the system,
+這是因為 它 無法在系統上執行 ，
+
+82
+00:04:02,900 --> 00:04:06,530
+so we need to create better fallbacks.
+所以我們需要 創造更好的 備用方案。
+
+83
+00:04:06,530 --> 00:04:09,990
+This would need to be updated on every cell and span that contains the font family Arial Black.
+這需要將每個單元格的字體設定為黑色宋體。
+
+84
+00:04:09,990 --> 00:04:12,970
+This would need to be updated on every cell and span that contains the font family Arial Black.
+這需要將每個單元格的字體設定為黑色宋體。
+
+85
+00:04:12,970 --> 00:04:14,760
+We're showing you the first cell,
+我們 向您示範  第一個單元格 ，
+
+86
+00:04:14,760 --> 00:04:16,480
+but you would actually have to apply this to every cell and span using that font family.
+但 你實際上 必須應用此設定在所有有用到該字體的單元格上 。
+
+87
+00:04:16,480 --> 00:04:22,420
+but you would actually have to apply this to every cell and span using that font family.
+但 你實際上 必須應用此設定在所有有用到該字體的單元格上 。
+
+88
+00:04:22,420 --> 00:04:24,690
+Now that we have a good fallback font,
+現在我們有 一個 很好的 後備字體 ，
+
+89
+00:04:24,690 --> 00:04:27,110
+we see that our text is very big.
+我們看到， 我們的文字 是非常大的 。
+
+90
+00:04:27,110 --> 00:04:32,910
+It's readable, but we'd like to have that fit in a single line.
+這是 易讀的 ， 但我們 希望 他能剛剛好在一行 。
+
+91
+00:04:32,910 --> 00:04:34,730
+We would follow the same process as before,
+我們 實作和之前一樣的步驟 ，
+
+92
+00:04:34,730 --> 00:04:37,760
+where we create a class and apply that class to the table cells.
+我們 創建一個 class，並 應用該class到表格單元 。
+
+93
+00:04:37,760 --> 00:04:40,340
+where we create a class and apply that class to the table cells.
+我們 創建一個 class，並 應用該class到表格單元 。
+
+94
+00:04:40,340 --> 00:04:44,170
+For this specific content, this is a long, arduous process.
+這個 特定的內容 ， 這是一個又繁瑣又長的過程 。
+
+95
+00:04:44,170 --> 00:04:46,180
+We're just showing you one little sample of an area between 321 pixels and 375 pixels,
+我們只是 向你展示 一個小小的當區域在321 pixels 和 375 pixels之間的樣本。
+
+96
+00:04:46,180 --> 00:04:51,540
+We're just showing you one little sample of an area between 321 pixels and 375 pixels,
+我們只是 向你展示 一個小小的當區域在321 pixels 和 375 pixels之間的樣本。
+
+
+97
+00:04:51,540 --> 00:04:57,060
+and the values that we would need to fit that text in one line right there.
+以及我們數據 當我們要使文字顯示在一行之中。
+
+98
+00:04:57,060 --> 00:05:00,010
+In styling an email across many breakpoints,
+在設定一封有需多斷點的電子郵件 版面時，
+
+99
+00:05:00,010 --> 00:05:02,180
+you're going to have to repeat this same process for multiple properties.
+你 將不得不 重複這個 同樣的多屬性過程 。
+
+100
+00:05:02,180 --> 00:05:03,670
+you're going to have to repeat this same process for multiple properties.
+你 將不得不 重複這個 同樣的多屬性過程 。
+
+101
+00:05:03,670 --> 00:05:06,220
+Here's another example where we adjust padding for our small screens as well.
+這裡的另一個 例子， 我們在調整 較佳的小螢幕顯示時的留白。
+
+102
+00:05:06,220 --> 00:05:07,690
+Here's another example where we adjust padding for our small screens as well.
+這裡的另一個 例子， 我們在調整 較佳的小螢幕顯示時的留白。
+
+103
+00:05:10,990 --> 00:05:13,630
+Now it's your turn to jump into the challenges
+現在 輪到你 進入 挑戰 。
+
+104
+00:05:13,630 --> 00:05:16,880
+and improve your small-screen experiences.
+並提高您的 小屏幕 經驗 。
+
+105
+00:05:16,880 --> 00:05:17,860
+Client that was-- ugh.
+客戶端was-粗糙。
+
+106
+00:05:17,860 --> 00:05:19,410
+I rolled my eyes.
+我轉了轉 眼睛。
+
+107
+00:05:19,410 --> 00:05:21,790
+Layout is ac-- ugh.
+佈局 ac- 啊 。
+
