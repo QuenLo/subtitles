@@ -1,0 +1,446 @@
+1
+00:00:00,500 --> 00:00:02,620
+[SINGING] Designing emails can be really tough.
+在設計 郵件 可真 難熬。
+
+2
+00:00:02,620 --> 00:00:05,080
+Client preprocessors can be pretty rough.
+客戶端 預處理器 可以是相當 粗糙。
+
+3
+00:00:05,080 --> 00:00:07,380
+To code email for all their devices,
+編寫 電子郵件 的 所有設備 ，
+
+4
+00:00:07,380 --> 00:00:09,540
+cut the design into many slices.
+切 設計 成很多 片。
+
+5
+00:00:09,540 --> 00:00:11,910
+Mark it up in tables with inline style,
+與 內嵌樣式 表 標記 起來 ，
+
+6
+00:00:11,910 --> 00:00:14,230
+with media queries into one big file.
+有 媒體查詢 成一個大文件 。
+
+7
+00:00:14,230 --> 00:00:16,665
+To win, you'll train and learn the details —
+要贏， 你會 訓練和 學習 的細節 - 。
+
+8
+00:00:16,665 --> 00:00:18,307
+Unmasking HTML Emails!
+揭露 HTML 電子郵件！
+
+9
+00:00:24,510 --> 00:00:25,400
+Welcome back.
+歡迎回來。
+
+10
+00:00:25,400 --> 00:00:27,160
+This is level four, and in this level,
+這 是 第四階段 ，在這裡 
+
+11
+00:00:27,160 --> 00:00:28,618
+we're going to have a few rematches with prior opponents.
+我們將要重新面對之前的幾個困難。
+
+12
+00:00:28,618 --> 00:00:29,687
+we're going to have a few rematches with prior opponents.
+我們將要重新面對之前的幾個困難。
+
+13
+00:00:29,687 --> 00:00:31,270
+They've learned your tricks, so you're going to have to come up with some new skills.
+他們已經看穿了你的技巧 ，所以你不得不拿出一些新的技能。
+
+14
+00:00:31,270 --> 00:00:33,210
+They've learned your tricks, so you're going to have to come up with some new skills.
+他們已經看穿了你的技巧 ，所以你不得不拿出一些新的技能。
+
+15
+00:00:33,210 --> 00:00:36,370
+We're going to use conditional styles, conditional content,and learn how to counter some client features.
+我們將使用條件樣式，有條件的內容，並學習如何應對一些客戶端的功能。
+
+16
+00:00:36,370 --> 00:00:40,690
+We're going to use conditional styles, conditional content,and learn how to counter some client features.
+我們將使用條件樣式，有條件的內容，並學習如何應對一些客戶端的功能。
+
+17
+00:00:40,690 --> 00:00:43,640
+We know that Word-based rendering engines have issues.
+我們知道，文字排版引擎有些問題。
+
+18
+00:00:43,640 --> 00:00:46,790
+Now we're going to focus in on correcting a few of them.
+現在我們將集中注意力在解決這些問題上。
+
+19
+00:00:46,790 --> 00:00:50,650
+We can see that our text is too big in Outlook 2007 and in Outlook 2010, as well as having multiple line height issues in both clients.
+我們可以看到，在outlook 2007和2010中有文字過大和多行顯示的問題。
+
+20
+00:00:50,650 --> 00:00:54,830
+We can see that our text is too big in Outlook 2007 and in Outlook 2010, as well as having multiple line height issues in both clients.
+我們可以看到，在outlook 2007和2010中有文字過大和多行顯示的問題。
+
+21
+00:00:54,830 --> 00:00:56,335
+We can see that our text is too big in Outlook 2007 and in Outlook 2010, as well as having multiple line height issues in both clients.
+我們可以看到，在outlook 2007和2010中有文字過大和多行顯示的問題。
+
+22
+00:00:59,420 --> 00:01:02,800
+Taking a look at one of their teammates, Outlook 2013,
+在來看看他們另一個版本，Outlook 2013
+
+23
+00:01:02,800 --> 00:01:06,000
+we can see that it has some of those issues,but not all of them
+雖然不是全部，但我們還是可以看到一些問題。
+
+24
+00:01:06,000 --> 00:01:08,900
+and then adds additional issues where line height is being applied differently to a border and images.
+有一些額外的問題，行高被應用在不同的邊框和圖像上。
+
+25
+00:01:08,900 --> 00:01:11,040
+and then adds additional issues where line height is being applied differently to a border and images.
+有一些額外的問題，行高被應用在不同的邊框和圖像上。
+
+26
+00:01:11,040 --> 00:01:14,290
+and then adds additional issues where line height is being applied differently to a border and images.
+有一些額外的問題，行高被應用在不同的邊框和圖像上。
+
+27
+00:01:14,290 --> 00:01:17,480
+We need a way to target individual Outlook clients,
+我們需要個別的方法來針對個別的Outlook客戶端 ，
+
+28
+00:01:17,480 --> 00:01:20,819
+and lucky for us, there are conditional comments.
+幸運的是我們還有"條件註釋"可以用。
+
+29
+00:01:20,819 --> 00:01:22,860
+The simplest conditional comment that we will use targets all versions of Microsoft Outlook.
+最簡單的"條件註釋"，我們將會應用在所有版本的Microsoft Outlook中。
+
+30
+00:01:22,860 --> 00:01:25,810
+The simplest conditional comment that we will use targets all versions of Microsoft Outlook.
+最簡單的"條件註釋"，我們將會應用在所有版本的Microsoft Outlook中。
+
+31
+00:01:25,810 --> 00:01:27,970
+If we want to target specific versions,
+如果我們要針對特定版本，
+
+32
+00:01:27,970 --> 00:01:31,820
+we can use operators,like this GTE operator that
+我們可以使用運算子，像GTE這樣的運算符
+
+33
+00:01:31,820 --> 00:01:34,830
+checks for all versions of Outlook that are greater than or equal to version 12.
+用來檢查所有版本的outlook是大於還是等於第12版本。
+
+34
+00:01:34,830 --> 00:01:37,025
+checks for all versions of Outlook that are greater than or equal to version 12.
+用來檢查所有版本的outlook是大於還是等於第12版本。
+
+35
+00:01:40,790 --> 00:01:42,290
+We can use the conditional comments to fix the font problems.
+我們可以使用"條件註釋"來修復字體的問題。
+
+36
+00:01:42,290 --> 00:01:44,210
+We can use the conditional comments to fix the font problems.
+我們可以使用"條件註釋"來修復字體的問題。
+
+37
+00:01:44,210 --> 00:01:48,350
+We are having problems with Outlook 2007 and 2010.
+在outlook2007和outlook2010上有問題。
+
+38
+00:01:48,350 --> 00:01:50,960
+We're going to use an operator to target Microsoft Outlook greater than or equal to version 12,and less than version 15.
+我們將使用運算式去判斷Microsoft Outlook的版本是大於等於12和小於15。
+
+39
+00:01:50,960 --> 00:01:54,360
+We're going to use an operator to target Microsoft Outlook greater than or equal to version 12,and less than version 15.
+我們將使用運算式去判斷Microsoft Outlook的版本是大於等於12和小於15。
+
+40
+00:01:54,360 --> 00:01:57,190
+We're going to use an operator to target Microsoft Outlook greater than or equal to version 12,and less than version 15.
+我們將使用運算式去判斷Microsoft Outlook的版本是大於等於12和小於15。
+
+41
+00:01:57,190 --> 00:02:01,210
+This gives us our versions 2007 and 2010.
+這為我們提供了2007年 和2010年的版本。
+
+42
+00:02:01,210 --> 00:02:02,870
+Inside our new conditional comment,
+我們的新條件註釋裡面，
+
+43
+00:02:02,870 --> 00:02:05,870
+we're going to redefine our email slogan class,
+我們要重新定義你的電子郵件標題 class，
+
+44
+00:02:05,870 --> 00:02:09,550
+and apply properties necessary to get that text on one line.
+並運用必要屬性來讓文字顯示在同一行 。
+
+45
+00:02:15,044 --> 00:02:16,460
+Versions of Microsoft Outlook that use Word as a rendering engine render line height differently than browsers.
+文字的行高，在使用Word為排版引擎的Microsoft Outlook版本中，是不同於瀏覽器的。
+
+46
+00:02:16,460 --> 00:02:19,390
+Versions of Microsoft Outlook that use Word as a rendering engine render line height differently than browsers.
+文字的行高，在使用Word為排版引擎的Microsoft Outlook版本中，是不同於瀏覽器的。
+
+47
+00:02:19,390 --> 00:02:20,880
+Versions of Microsoft Outlook that use Word as a rendering engine render line height differently than browsers.
+文字的行高，在使用Word為排版引擎的Microsoft Outlook版本中，是不同於瀏覽器的。
+
+48
+00:02:20,880 --> 00:02:23,000
+It's almost like they knew this,
+這幾乎就像他們知道這一點，
+
+49
+00:02:23,000 --> 00:02:25,090
+because they added a vendor-specific property 
+因為他們增加了一個內建特定的屬性，
+
+50
+00:02:25,090 --> 00:02:29,740
+that we can use to tell Word to set our line height exactly to pixel values.
+可以用它來告訴Word用像素值來精確設置你的行高。
+
+51
+00:02:29,740 --> 00:02:31,424
+that we can use to tell Word to set our line height exactly to pixel values.
+可以用它來告訴Word用像素值來精確設置你的行高。
+
+52
+00:02:31,424 --> 00:02:33,090
+We're going to use a conditional comment
+我們將使用條件註釋
+
+53
+00:02:33,090 --> 00:02:35,030
+to target all versions of Outlook using Microsoft Word as the rendering engine,
+來讓所有版本的Outlook都是使用Microsoft Word 作為排版引擎
+
+54
+00:02:35,030 --> 00:02:37,630
+to target all versions of Outlook using Microsoft Word as the rendering engine,
+來讓所有版本的Outlook都是使用Microsoft Word 作為排版引擎
+
+55
+00:02:37,630 --> 00:02:40,510
+and apply this property to table cells.
+且將這個主性應用到表格單元格 。
+
+56
+00:02:40,510 --> 00:02:41,930
+Here, you can see that our line height has improved on our email titles.
+現在 ， 你可以看到這行電子郵件的標題高度已經被改進了
+
+57
+00:02:41,930 --> 00:02:43,410
+Here, you can see that our line height has improved on our email titles.
+現在 ， 你可以看到這行電子郵件的標題高度已經被改進了
+
+58
+00:02:47,720 --> 00:02:49,450
+Now that we have our line height looking good,
+現在 ，我們已經讓行高看起來不錯，
+
+59
+00:02:49,450 --> 00:02:52,600
+we can use that same conditional comment to add properties
+我們可以用同樣的條件註釋來添加屬性 。
+
+60
+00:02:52,600 --> 00:02:57,000
+and reduce padding on specific text areas.
+並減少在文本區域的留白
+
+61
+00:02:57,000 --> 00:02:59,650
+We're going to set the padding bottom of our email title to zero to trim up that space.
+我們要設置電子郵件的標題下方和本文是沒有距離的。
+
+62
+00:02:59,650 --> 00:03:01,375
+We're going to set the padding bottom of our email title to zero to trim up that space.
+我們要設置電子郵件的標題下方和本文是沒有距離的。
+
+
+63
+00:03:06,270 --> 00:03:08,100
+Because we use this vendor property
+因為我們使用該內建屬性 。
+
+64
+00:03:08,100 --> 00:03:11,380
+and set our cell's line height to 14 pixels,
+並設置我們的單元格高度為14像素，
+
+65
+00:03:11,380 --> 00:03:15,010
+that affects all of the text within the cell.
+這影響文中所有的單元格。
+
+66
+00:03:15,010 --> 00:03:18,310
+This property is not supported on inline elements,
+這個屬性不支持行內元素，
+
+67
+00:03:18,310 --> 00:03:20,670
+so we can't apply it to our spans.
+因此 ，我們不能將其應用到我們的spans
+
+68
+00:03:20,670 --> 00:03:24,640
+Instead, we need to change our line height to accommodate all of the text within the cell.
+相反，我們需要改變我們的行高，以適應所有內文中的單元表格。
+
+69
+00:03:24,640 --> 00:03:26,590
+Instead, we need to change our line height to accommodate all of the text within the cell.
+相反，我們需要改變我們的行高，以適應所有內文中的單元表格。
+
+70
+00:03:26,590 --> 00:03:29,680
+We would do this by grabbing the highest value, which,in this case, is 32 pixels.
+我們將抓取最大的數值，如這例子中是32pixels
+
+71
+00:03:29,680 --> 00:03:31,415
+We would do this by grabbing the highest value, which,in this case, is 32 pixels.
+我們將抓取最大的數值，如這例子中是32pixels
+
+72
+00:03:34,860 --> 00:03:37,900
+Now that we know the size to use, we can create a class
+現在我們知道使用的大小， 我們 可以創建一個類別
+
+73
+00:03:37,900 --> 00:03:39,820
+and apply that to the table cells.
+並應用到表格單元格 。
+
+74
+00:03:44,440 --> 00:03:46,320
+We fixed all of our line heights or text,
+我們修復了所有我們的行高或文字，
+
+75
+00:03:46,320 --> 00:03:51,270
+but there's an unusual case in Outlook 2013 with empty cells.
+但有一個不尋常的情況下，在 Outlook 2013 的空單元格 。
+
+76
+00:03:51,270 --> 00:03:55,120
+If a cell is empty, Outlook ignores the height.
+如果單元格是空的 ， Outlook就會忽略行高。
+
+77
+00:03:55,120 --> 00:03:57,720
+This doesn't require conditional comments or fixing.
+這並不需要有條件的設定或固定。
+
+78
+00:03:57,720 --> 00:04:00,790
+We just need to add a non- breaking space in there for Outlook to recognize the height.
+我們只需要在裡面添加一個non- breaking空間讓Outlook知道高度。
+
+79
+00:04:00,790 --> 00:04:02,460
+We just need to add a non- breaking space in there for Outlook to recognize the height.
+我們只需要在裡面添加一個non- breaking空間讓Outlook知道高度。
+
+80
+00:04:09,420 --> 00:04:12,330
+Outlook 2013 also has some weird things
+Outlook 2013 也有一些 奇怪的事情 。
+
+81
+00:04:12,330 --> 00:04:15,810
+in the way it treats line height for images.
+在設定圖片的行高上
+
+82
+00:04:15,810 --> 00:04:18,059
+To correct this, we need to treat images like they were text, 
+要糾正這一點，我們需要像文字一般的設定圖像
+
+83
+00:04:18,059 --> 00:04:21,339
+and apply a font size and line height that's equal to the height of the image.
+並應用字體大小和等於圖像高度的行高
+
+84
+00:04:21,339 --> 00:04:23,620
+and apply a font size and line height that's equal to the height of the image.
+並應用字體大小和等於圖像高度的行高
+
+85
+00:04:29,070 --> 00:04:30,550
+If we look at our email in Outlook using Internet Explorer and Outlook using Word,
+如果我們看一下在使用IE排版引擎和word排版引擎的Outlook中的電子郵件。
+
+86
+00:04:30,550 --> 00:04:33,859
+If we look at our email in Outlook using Internet Explorer and Outlook using Word,
+如果我們看一下在使用IE排版引擎和word排版引擎的Outlook中的電子郵件。
+
+87
+00:04:33,859 --> 00:04:35,400
+we have a very consistent experience.
+我們有一個非常一致的體驗。
+
+88
+00:04:38,680 --> 00:04:41,070
+Now it's your turn to use conditional styles in the challenges.
+現在 輪到你 在挑戰中使用 條件樣式 。
+
+89
+00:04:41,070 --> 00:04:42,860
+Now it's your turn to use conditional styles in the challenges.
+現在 輪到你 在挑戰中使用 條件樣式 。
+
