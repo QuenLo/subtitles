@@ -1,0 +1,380 @@
+1
+00:00:02,040 --> 00:00:02,986
+Welcome back.
+歡迎回來。
+
+2
+00:00:02,986 --> 00:00:04,860
+In the last section, we made a lot of changes to our layout to improve small screens.
+在最後一節中，我們在版面上做了一個很大的變化來加強在小螢幕上的顯示。
+
+3
+00:00:04,860 --> 00:00:07,830
+In the last section, we made a lot of changes to our layout to improve small screens.
+在最後一節中，我們在版面上做了一個很大的變化來加強在小螢幕上的顯示。
+
+4
+00:00:07,830 --> 00:00:11,100
+Unfortunately, this caused a lot of problems for larger screens.
+不幸的是，這在大螢幕上造成了許多的問題。
+
+5
+00:00:11,100 --> 00:00:15,400
+We're going to go through and make one more round of changes.
+我們要面對他並迎接在一輪的改變。
+
+6
+00:00:15,400 --> 00:00:16,830
+The first problem that we run into is something we almost expected.
+我們第一個遇到的問題和我們預想的差不多。
+
+7
+00:00:16,830 --> 00:00:18,820
+The first problem that we run into is something we almost expected.
+我們第一個遇到的問題和我們預想的差不多。
+
+8
+00:00:18,820 --> 00:00:21,700
+We know that Outlook doesn't support max-width.
+我們知道， Outlook不支持最大寬度 。
+
+9
+00:00:21,700 --> 00:00:23,605
+However, the way we're going to fix it is going to be completely different from before.
+然而，我們解決他的方式和以前完全的不一樣。
+
+10
+00:00:23,605 --> 00:00:27,770
+However, the way we're going to fix it is going to be completely different from before.
+然而，我們解決他的方式和以前完全的不一樣。
+
+11
+00:00:27,770 --> 00:00:29,610
+We know that this problem only occurs in Outlook or clients that use IE as a rendering engine.
+我們知道這個問題只有出現在outlook或是以IE為排版引擎的客戶端上。
+
+12
+00:00:29,610 --> 00:00:33,140
+We know that this problem only occurs in Outlook or clients that use IE as a rendering engine.
+我們知道這個問題只有出現在outlook或是以IE為排版引擎的客戶端上。
+
+13
+00:00:33,140 --> 00:00:36,230
+We're going to create a new conditional comment that
+我們要創建一個新的條件註釋
+
+14
+00:00:36,230 --> 00:00:39,820
+targets Outlook and IE, and applies a table only when those two conditions are met.
+專注在outlook和IE上，只將它應用在滿足這兩個條件的表上。
+
+15
+00:00:39,820 --> 00:00:43,120
+targets Outlook and IE, and applies a table only when those two conditions are met.
+專注在outlook和IE上，只將它應用在滿足這兩個條件的表上。
+
+16
+00:00:43,120 --> 00:00:45,670
+We also need to go outside of our content table and close the table that we created.
+需要在我們創建的表格之外關閉他。
+
+17
+00:00:45,670 --> 00:00:48,690
+We also need to go outside of our content table and close the table that we created.
+需要在我們創建的表格之外關閉他。
+
+18
+00:00:48,690 --> 00:00:51,590
+While we're only showing you the solution applied to the header,
+而我們只針對頁首做教學，
+
+19
+00:00:51,590 --> 00:00:54,800
+we have to repeat this process for every content container table.
+我們需要重複這些過程到每一個內容表單上。
+
+20
+00:00:54,800 --> 00:00:55,300
+we have to repeat this process for every content container table.
+我們需要重複這些過程到每一個內容表單上。
+
+21
+00:00:58,390 --> 00:01:00,190
+Now we're going to tackle another edge case problem in clients using the Word rendering engine.
+現在我們要來解決另一個以Word為排版引擎的客戶端的邊界問題。
+
+22
+00:01:00,190 --> 00:01:03,830
+Now we're going to tackle another edge case problem in clients using the Word rendering engine.
+現在我們要來解決另一個以Word為排版引擎的客戶端的邊界問題。
+
+23
+00:01:03,830 --> 00:01:08,640
+When two tables have the value of left on the align attribute,
+當兩個表中都有在屬性中設定向右對齊的值，
+
+24
+00:01:08,640 --> 00:01:12,780
+Word adds extra spacing around each table with border spacing.
+Word以邊框間距的方式增加了額外的空白在各個表格上。
+
+25
+00:01:12,780 --> 00:01:15,440
+This extra spacing makes the two widths larger than their container, so they won't stack properly.
+這個額外的間距使得這兩個的寬度都比裝置寬，所以他們並不會正常的堆疊。
+
+26
+00:01:15,440 --> 00:01:17,630
+This extra spacing makes the two widths larger than their container, so they won't stack properly.
+這個額外的間距使得這兩個的寬度都比裝置寬，所以他們並不會正常的堆疊。
+
+27
+00:01:20,730 --> 00:01:22,760
+This solution is a weird one.
+這裡有個奇怪的解決方式。
+
+28
+00:01:22,760 --> 00:01:26,050
+We're actually going to go back to using two cells to align our columns,
+我們要使用兩個單元格來對齊我們的列，
+
+29
+00:01:26,050 --> 00:01:27,950
+but we're only going to do that when clients are using Microsoft Word,as their rendering engine.
+但我們只打算應用在當排版引擎為Microsoft Word時。
+
+30
+00:01:27,950 --> 00:01:30,820
+but we're only going to do that when clients are using Microsoft Word,as their rendering engine.
+但我們只打算應用在當排版引擎為Microsoft Word時。
+
+31
+00:01:30,820 --> 00:01:32,430
+but we're only going to do that when clients are using Microsoft Word,as their rendering engine.
+但我們只打算應用在當排版引擎為Microsoft Word時。
+
+32
+00:01:32,430 --> 00:01:34,650
+Here, we're using a conditional comment
+在這裡，我們使用的是條件註釋
+
+33
+00:01:34,650 --> 00:01:38,500
+to target all of the clients using Microsoft Word using a close cell, 
+來指定所有以Microsoft Word為排版引擎的客戶端使用封閉單元格，
+
+34
+00:01:38,500 --> 00:01:42,370
+and then opening another cell to surround our two tables.
+然後打開一個單元格來包我們的兩個表格。
+
+35
+00:01:42,370 --> 00:01:43,530
+and then opening another cell to surround our two tables.
+然後打開一個單元格來包我們的兩個表格。
+
+36
+00:01:46,380 --> 00:01:50,070
+Our earlier hack, where we used two divs with display inline block actually created another problem for us.
+之前的手段，我們使用兩個div來顯示行內空白，實際上造成了另一個問題。
+
+37
+00:01:50,070 --> 00:01:53,310
+Our earlier hack, where we used two divs with display inline block actually created another problem for us.
+之前的手段，我們使用兩個div來顯示行內空白，實際上造成了另一個問題。
+
+38
+00:01:53,310 --> 00:01:55,630
+With our two tables aligned, they would be side by side in our desktop view.
+看看我們兩個表的對齊，他們將會以邊界對邊界的方式顯示在電腦桌面。
+
+39
+00:01:55,630 --> 00:01:59,280
+With our two tables aligned, they would be side by side in our desktop view.
+看看我們兩個表的對齊，他們將會以邊界對邊界的方式顯示在電腦桌面。
+
+40
+00:01:59,280 --> 00:02:03,744
+However, display inline block also adds a little bit of space around a container.
+然而，inline-block 也增加了一些空格在裝置上。
+
+41
+00:02:03,744 --> 00:02:04,535
+However, display inline block also adds a little bit of space around a container.
+然而，inline-block 也增加了一些空格在裝置上。
+
+42
+00:02:07,360 --> 00:02:10,539
+The solution for this is, again, very weird.
+這情況又有一個怪異解決方式。
+
+43
+00:02:10,539 --> 00:02:13,820
+What we can do is we can tell those two divs to have a font size of zero.
+我們可以做的就是將兩個div的字體大小設定為零。
+
+44
+00:02:13,820 --> 00:02:15,870
+What we can do is we can tell those two divs to have a font size of zero.
+我們可以做的就是將兩個div的字體大小設定為零。
+
+45
+00:02:15,870 --> 00:02:19,530
+This will make clients not render that extra space around them,
+這將使客戶端無法在他們附近呈現額外的空格
+
+46
+00:02:19,530 --> 00:02:22,070
+and this won't impact our content styles
+且這不會影響我們的文件格式，
+
+47
+00:02:22,070 --> 00:02:24,660
+because we have all of our styles inline on the table cells nested within them.
+因為我們所有內嵌在單元表格的樣式inline
+
+48
+00:02:24,660 --> 00:02:26,840
+because we have all of our styles inline on the table cells nested within them.
+因為我們所有內嵌在單元表格的樣式inline
+
+49
+00:02:29,600 --> 00:02:31,310
+Now we have another edge case problem
+現在我們還有另一個邊界問題。
+
+50
+00:02:31,310 --> 00:02:34,960
+that's specific to one client, but this time it's Yahoo Mail.
+這次也是針對特定的客戶端---Yahoo Mail。
+
+51
+00:02:34,960 --> 00:02:38,310
+Our entire layout is being aligned to the left.
+我們的整個排版都向左對齊了。
+
+52
+00:02:38,310 --> 00:02:40,840
+If we inspect the CSS, like we did before,
+如果我們像之前一樣仔細檢查CSS，
+
+53
+00:02:40,840 --> 00:02:45,750
+we can see that Yahoo is applying margin: 0 to tables.
+我們可以發現Yahoo應用 margin: 0 到表格中。
+
+54
+00:02:45,750 --> 00:02:47,240
+This overrides our align: center.
+這覆寫了我們的 align: center。
+
+55
+00:02:51,100 --> 00:02:53,880
+Since this problem only occurs in Yahoo Mail,
+因為這個問題只會出現在Yahoo Mail中，
+
+56
+00:02:53,880 --> 00:02:57,180
+and Yahoo does support CSS in a style tag,
+且Yahoo支援在style tag中的CSS。
+
+57
+00:02:57,180 --> 00:02:59,660
+we can make our fix in one location.
+我們可以讓將其固定在一個位置。
+
+58
+00:02:59,660 --> 00:03:02,880 
+We're going to add CSS that targets tables and set margin: 0 auto with an important declaration.
+我們要來添加CSS，用來指定表格且用important來標註margin: 0 auto的設定
+
+59
+00:03:02,880 --> 00:03:06,640
+We're going to add CSS that targets tables and set margin: 0 auto with an important declaration.
+我們要來添加CSS，用來指定表格且用important來標註margin: 0 auto的設定
+
+60
+00:03:06,640 --> 00:03:08,825
+This will override Yahoo's CSS.
+這將覆蓋Yahoo的CSS。
+
+61
+00:03:11,720 --> 00:03:14,250
+Our final step is to add our remaining content to the bottom of our email.
+我們的最後一步驟就是加入剩下的內容在郵件的底部
+
+62
+00:03:14,250 --> 00:03:15,830
+Our final step is to add our remaining content to the bottom of our email.
+我們的最後一步驟就是加入剩下的內容在郵件的底部
+
+63
+00:03:15,830 --> 00:03:18,140
+This is a repetition of what we've already done,
+這其實就是重複我們之前做過的
+
+64
+00:03:18,140 --> 00:03:20,790
+where we're going to apply our width of 100% and our max width of 600 pixels to each table.
+在這裡我們要將每個表格的寬度設定為100%以及最大的寬度是600px。
+
+65
+00:03:20,790 --> 00:03:24,020
+where we're going to apply our width of 100% and our max width of 600 pixels to each table.
+在這裡我們要將每個表格的寬度設定為100%以及最大的寬度是600px。
+
+66
+00:03:28,930 --> 00:03:31,430
+It's been a long battle, but now our email is
+這是一個漫長的戰鬥，但現在你的電子郵件都是好看的
+
+67
+00:03:31,430 --> 00:03:34,820
+looking great in small-screen clients and large-screen clients,
+在大螢幕或是小螢幕
+
+68
+00:03:34,820 --> 00:03:36,440
+with or without media queries.
+有或沒有media queries。
+
+69
+00:03:39,729 --> 00:03:42,020
+Now it's your turn to make that final round of changes.
+現在輪到你來做最後的挑戰了
+
+70
+00:03:44,585 --> 00:03:45,940
+Chk chk, boom.
+CHK CHK ， 繁榮 。
+
+71
+00:03:45,940 --> 00:03:47,359
+Oh, this is it.
+哦 ， 這是它。
+
+72
+00:03:47,359 --> 00:03:47,858
+Ahem.
+啊哈 。
+
+73
+00:03:47,858 --> 00:03:51,181
+Oh, man, I was ??I almost dropped the mic.
+哦 ，伙計 ， 我是 - 我幾乎 放棄了 麥克風 。
+
+74
+00:03:51,181 --> 00:03:53,870
+Pick it back up like, "Aw, sorry."
+撿起來 備份 一樣 ， AW ，對不起 。
+
+75
+00:03:53,870 --> 00:03:54,540
+I'm sorry.
+對不起。
+
+76
+00:03:54,540 --> 00:03:56,450
+I still need that.
+我還需要 這一點。
+
